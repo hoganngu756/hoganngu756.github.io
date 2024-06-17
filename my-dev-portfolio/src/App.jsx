@@ -7,7 +7,10 @@ function App() {
 
   return (
     <>
-      <h1>Hello!</h1>
+      <div className="container mx-auto grid grid-cols-3 gap-4">
+        <div className="border border-red-500">column 1</div>
+        <div className="border border-black col-span-2">column 2</div>
+        </div>
     </>
   )
 }
