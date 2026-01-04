@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
 const Hero = () => {
@@ -20,12 +20,7 @@ const Hero = () => {
         {/* Contact Info */}
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-10 text-sm sm:text-base">
           <a
-            href="tel:469-720-5180"
-            className="flex items-center justify-center gap-2 hover:text-blue-400 transition"
-          >
-            <FaPhone /> 469-720-5180
-          </a>
-          <a
+
             href="mailto:hoganngu756@gmail.com"
             className="flex items-center justify-center gap-2 hover:text-blue-400 transition"
           >
