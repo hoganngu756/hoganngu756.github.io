@@ -14,8 +14,8 @@ Visit your portfolio at: **https://hoganngu756.github.io/**
   - Hero: Eye-catching landing section with contact info
   - Projects: Showcase of 3 featured projects with technologies
   - Skills: Technical skills organized by category
-  - Experience: Work history and education timeline
-  - Contact: Direct links to GitHub, LinkedIn, email, and phone
+  - Education: University education timeline
+  - Contact: Direct links to GitHub and LinkedIn
 
 ## 🛠️ Tech Stack
 
@@ -160,7 +160,6 @@ This project is open source and available under the MIT License.
 ## 💬 Contact
 
 - **Email**: hoganngu756@gmail.com
-- **Phone**: 469-720-5180
 - **LinkedIn**: https://www.linkedin.com/in/hogan-nguyen/
 - **GitHub**: https://github.com/hoganngu756
 
