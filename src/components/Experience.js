@@ -7,7 +7,7 @@ const Experience = () => {
   const experiences = [
     {
       type: 'work',
-      title: 'Software Engineer Intern',
+      title: 'Technology Intern',
       company: 'Blackhawk Network',
       location: 'Coppell, TX',
       period: 'June 2024 – August 2024',
@@ -22,7 +22,6 @@ const Experience = () => {
   const education = [
     {
       degree: 'Master of Science in Computer Science',
-      track: '(Data Science Track)',
       school: 'University of Texas at Dallas',
       location: 'Richardson, TX',
       period: 'Aug 2025 – Present'
@@ -56,12 +55,12 @@ const Experience = () => {
                     {exp.title}
                   </h4>
                   <p className={`font-semibold mb-1 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>{exp.company}</p>
-                  <p className={`text-sm mb-3 ${isDark ? 'text-gray-400' : 'text-slate-600'}`}>
+                  <p className={`text-sm mb-3 ${isDark ? 'text-gray-300' : 'text-slate-600'}`}>
                     {exp.location} • {exp.period}
                   </p>
                   <ul className="space-y-2">
                     {exp.description.map((item, idx) => (
-                      <li key={idx} className="text-gray-700 text-sm flex gap-2">
+                      <li key={idx} className={`text-sm flex gap-2 ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
                         <span className="text-blue-600 font-bold">•</span>
                         <span>{item}</span>
                       </li>
@@ -88,7 +87,7 @@ const Experience = () => {
                     <p className={`font-semibold text-sm mb-2 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>{edu.track}</p>
                   )}
                   <p className={`font-semibold mb-1 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>{edu.school}</p>
-                  <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-slate-600'}`}>
+                  <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-slate-600'}`}>
                     {edu.location} • {edu.period}
                   </p>
                 </div>

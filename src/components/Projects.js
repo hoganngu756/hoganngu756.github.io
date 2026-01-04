@@ -36,7 +36,7 @@ const Projects = () => {
           Featured Projects
         </h2>
 
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <div
               key={idx}
@@ -47,7 +47,7 @@ const Projects = () => {
                   {project.title}
                 </h3>
 
-                <p className={`mb-4 leading-relaxed text-base sm:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p className={`mb-4 leading-relaxed text-base sm:text-lg ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
                   {project.description}
                 </p>
 
@@ -68,7 +68,7 @@ const Projects = () => {
                   {project.highlights.map((highlight, idx) => (
                     <span
                       key={idx}
-                      className={`${isDark ? 'text-blue-700 font-semibold' : 'text-sm text-blue-600 font-semibold'}`}
+                      className={`font-semibold ${isDark ? 'text-blue-300' : 'text-blue-600'}`}
                     >
                       ✓ {highlight}
                     </span>
