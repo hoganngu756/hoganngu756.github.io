@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-blue-600 text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
           {/* Contact Info */}
@@ -33,7 +33,7 @@ const Footer = () => {
                 href="https://github.com/hoganngu756"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl hover:text-blue-400 transition transform hover:scale-110"
+                className="text-2xl hover:text-blue-100 transition transform hover:scale-110"
               >
                 <FaGithub />
               </a>
@@ -41,7 +41,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/hogan-nguyen/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl hover:text-blue-400 transition transform hover:scale-110"
+                className="text-2xl hover:text-blue-100 transition transform hover:scale-110"
               >
                 <FaLinkedin />
               </a>
@@ -49,9 +49,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="border-slate-700 mb-6" />
+        <hr className="border-blue-500 mb-6" />
 
-        <div className="text-center text-gray-400 text-sm">
+        <div className="text-center text-blue-100 text-sm">
           <p>© 2026 Hogan Nguyen. All rights reserved.</p>
           <p>Built with React & Tailwind CSS</p>
         </div>

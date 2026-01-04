@@ -4,12 +4,12 @@ import { Link } from 'react-scroll';
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-r from-blue-50 via-sky-50 to-blue-50 text-slate-900 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in text-blue-700">
           Hogan Nguyen
         </h1>
-        <p className="text-xl sm:text-2xl text-blue-300 mb-6 font-semibold">
+        <p className="text-xl sm:text-2xl text-blue-600 mb-6 font-semibold">
           Software Engineer & Data Science Enthusiast
         </p>
         <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -39,7 +39,7 @@ const Hero = () => {
             href="https://github.com/hoganngu756"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl hover:text-blue-400 transition transform hover:scale-110"
+            className="text-3xl text-blue-600 hover:text-blue-700 transition transform hover:scale-110"
           >
             <FaGithub />
           </a>
@@ -47,7 +47,7 @@ const Hero = () => {
             href="https://www.linkedin.com/in/hogan-nguyen/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl hover:text-blue-400 transition transform hover:scale-110"
+            className="text-3xl text-blue-600 hover:text-blue-700 transition transform hover:scale-110"
           >
             <FaLinkedin />
           </a>
@@ -58,7 +58,7 @@ const Hero = () => {
           to="projects"
           smooth={true}
           duration={500}
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 cursor-pointer"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 cursor-pointer"
         >
           View My Work
         </Link>

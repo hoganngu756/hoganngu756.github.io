@@ -26,9 +26,9 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="bg-blue-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-slate-900">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-blue-700">
           Featured Projects
         </h2>
 
@@ -52,7 +52,7 @@ const Projects = () => {
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="bg-slate-800 text-white text-xs sm:text-sm font-semibold px-3 py-1 rounded"
+                        className="bg-blue-600 text-white text-xs sm:text-sm font-semibold px-3 py-1 rounded"
                       >
                         {tech}
                       </span>

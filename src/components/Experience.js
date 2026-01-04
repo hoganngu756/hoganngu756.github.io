@@ -46,9 +46,9 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="bg-gray-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="bg-blue-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-slate-900">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-blue-700">
           Experience & Education
         </h2>
 
@@ -56,13 +56,13 @@ const Experience = () => {
           {/* Experience */}
           <div>
             <div className="flex items-center gap-2 mb-8">
-              <FaBriefcase className="text-2xl text-blue-600" />
-              <h3 className="text-2xl font-bold text-slate-900">Work Experience</h3>
+              <FaBriefcase className="text-2xl text-blue-700" />
+              <h3 className="text-2xl font-bold text-blue-700">Work Experience</h3>
             </div>
             <div className="space-y-6">
               {experiences.map((exp, idx) => (
                 <div key={idx} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-                  <h4 className="text-xl font-bold text-slate-900 mb-1">
+                  <h4 className="text-xl font-bold text-blue-700 mb-1">
                     {exp.title}
                   </h4>
                   <p className="text-blue-600 font-semibold mb-1">{exp.company}</p>
@@ -85,13 +85,13 @@ const Experience = () => {
           {/* Education */}
           <div>
             <div className="flex items-center gap-2 mb-8">
-              <FaGraduationCap className="text-2xl text-blue-600" />
-              <h3 className="text-2xl font-bold text-slate-900">Education</h3>
+              <FaGraduationCap className="text-2xl text-blue-700" />
+              <h3 className="text-2xl font-bold text-blue-700">Education</h3>
             </div>
             <div className="space-y-6">
               {education.map((edu, idx) => (
                 <div key={idx} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-                  <h4 className="text-lg font-bold text-slate-900 mb-1">
+                  <h4 className="text-lg font-bold text-blue-700 mb-1">
                     {edu.degree}
                   </h4>
                   {edu.track && (

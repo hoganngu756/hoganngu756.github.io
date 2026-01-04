@@ -26,9 +26,9 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-gray-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-slate-900">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-blue-700">
           Technical Skills
         </h2>
 
@@ -50,7 +50,7 @@ const Skills = () => {
                   {category.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full"
+                      className="bg-blue-200 text-blue-900 text-sm font-semibold px-3 py-1 rounded-full"
                     >
                       {skill}
                     </span>
