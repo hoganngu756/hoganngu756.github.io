@@ -10,11 +10,12 @@ const Hero = () => {
           Hogan Nguyen
         </h1>
         <p className="text-xl sm:text-2xl text-blue-600 mb-6 font-semibold">
-          Software Engineer & Data Science Enthusiast
+          Aspiring Software Engineer & Data Science Enthusiast!
         </p>
         <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Passionate about building intelligent systems with Python, React, and cloud technologies.
-          Specialized in computer vision, data science, and full-stack web development.
+          Passionate about learning and building intelligent software with Java, Python, React, cloud technologies, and more.
+          I'm also a huge fan of pickleball and tennis 😀.
+          
         </p>
 
         {/* Contact Info */}

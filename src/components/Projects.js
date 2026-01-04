@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
@@ -15,6 +16,7 @@ const Projects = () => {
         'Built a predictive model to assess borrower default risk by engineering financial features from a public LendingClub dataset, achieving 92% accuracy. Implemented data-driven insights through SHAP value analysis to identify key default drivers.',
       technologies: ['Python', 'Scikit-learn', 'XGBoost', 'SHAP'],
       highlights: ['92% accuracy', 'SHAP analysis', 'Feature engineering'],
+      link: 'https://github.com/hoganngu756/credit-risk-modeling',
     },
     {
       title: 'Retirement Planning Tool',
@@ -60,7 +62,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 mb-4">
                   {project.highlights.map((highlight, idx) => (
                     <span
                       key={idx}
@@ -70,6 +72,17 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+                  >
+                    <FaGithub /> View on GitHub
+                  </a>
+                )}
               </div>
             </div>
           ))}
