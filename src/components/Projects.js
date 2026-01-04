@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub } from 'react-icons/fa';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Projects = () => {
+  const { isDark } = useContext(ThemeContext);
   const projects = [
     {
       title: 'Tennis Analysis System',
@@ -28,9 +30,9 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-blue-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className={`${isDark ? 'bg-slate-800' : 'bg-blue-50'} py-16 sm:py-20 px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-blue-700">
+        <h2 className={`text-4xl sm:text-5xl font-bold text-center mb-12 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
           Featured Projects
         </h2>
 
@@ -38,14 +40,14 @@ const Projects = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition transform hover:scale-102"
+              className={`${isDark ? 'bg-slate-700' : 'bg-white'} rounded-lg shadow-md overflow-hidden hover:shadow-xl transition transform hover:scale-102`}
             >
               <div className="p-6 sm:p-8">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-slate-900">
+                <h3 className={`text-2xl sm:text-3xl font-bold mb-3 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
                   {project.title}
                 </h3>
 
-                <p className="text-gray-700 mb-4 leading-relaxed text-base sm:text-lg">
+                <p className={`mb-4 leading-relaxed text-base sm:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   {project.description}
                 </p>
 
@@ -66,7 +68,7 @@ const Projects = () => {
                   {project.highlights.map((highlight, idx) => (
                     <span
                       key={idx}
-                      className="text-sm text-blue-600 font-semibold"
+                      className={`${isDark ? 'text-blue-700 font-semibold' : 'text-sm text-blue-600 font-semibold'}`}
                     >
                       ✓ {highlight}
                     </span>
@@ -78,7 +80,7 @@ const Projects = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+                    className={`inline-flex items-center gap-2 font-semibold py-2 px-4 rounded transition ${isDark ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
                   >
                     <FaGithub /> View on GitHub
                   </a>

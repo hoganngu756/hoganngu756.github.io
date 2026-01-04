@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Footer = () => {
+  const { isDark } = useContext(ThemeContext);
+
   return (
-    <footer className="bg-blue-600 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer className={`${isDark ? 'bg-slate-900' : 'bg-blue-600'} text-white py-12 px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
           {/* Contact Info */}
@@ -44,7 +47,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="border-blue-500 mb-6" />
+        <hr className={`mb-6 ${isDark ? 'border-slate-700' : 'border-blue-500'}`} />
 
         <div className="text-center text-blue-100 text-sm">
           <p>© 2026 Hogan Nguyen. All rights reserved.</p>

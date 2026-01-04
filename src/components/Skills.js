@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaCode, FaTools, FaDatabase, FaLaptopCode } from 'react-icons/fa';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Skills = () => {
+  const { isDark } = useContext(ThemeContext);
   const skillCategories = [
     {
       title: 'Languages',
@@ -26,9 +28,9 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className={`${isDark ? 'bg-slate-900' : 'bg-white'} py-16 sm:py-20 px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-blue-700">
+        <h2 className={`text-4xl sm:text-5xl font-bold text-center mb-12 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
           Technical Skills
         </h2>
 
@@ -38,11 +40,11 @@ const Skills = () => {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+                className={`${isDark ? 'bg-slate-800' : 'bg-blue-50'} rounded-lg shadow-md p-6 hover:shadow-lg transition`}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Icon className="text-2xl text-blue-600" />
-                  <h3 className="text-2xl font-bold text-slate-900">
+                  <Icon className={`text-2xl ${isDark ? 'text-blue-400' : 'text-blue-700'}`} />
+                  <h3 className={`text-2xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
                     {category.title}
                   </h3>
                 </div>
@@ -50,7 +52,7 @@ const Skills = () => {
                   {category.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="bg-blue-200 text-blue-900 text-sm font-semibold px-3 py-1 rounded-full"
+                      className={`text-sm font-semibold px-3 py-1 rounded-full ${isDark ? 'bg-blue-900 text-blue-300' : 'bg-blue-200 text-blue-900'}`}
                     >
                       {skill}
                     </span>
