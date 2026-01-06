@@ -2,32 +2,6 @@
 
 A modern, responsive portfolio website built with React and Tailwind CSS, showcasing projects, skills, and professional experience. Deployed on GitHub Pages.
 
-## 🌐 Live Site
-
-Visit your portfolio at: **https://hoganngu756.github.io/**
-
-## 🚀 Features
-
-- ✨ **Modern Design**: Clean, responsive interface with smooth animations
-- 📱 **Mobile Optimized**: Fully responsive on all devices
-- 🎯 **Sections**:
-  - Hero: Eye-catching landing section with contact info
-  - Projects: Showcase of 3 featured projects with technologies
-  - Skills: Technical skills organized by category
-  - Education: University education timeline
-  - Contact: Direct links to GitHub and LinkedIn
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React 19, JavaScript ES6+
-- **Styling**: Tailwind CSS, Custom CSS
-- **Icons**: React Icons
-- **Smooth Scrolling**: React Scroll
-- **Deployment**: GitHub Pages
-- **Build Tool**: Create React App
-
-## 📦 Getting Started
-
 ### Prerequisites
 
 - Node.js (v14+)
