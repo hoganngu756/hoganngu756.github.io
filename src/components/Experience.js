@@ -7,6 +7,16 @@ const Experience = () => {
   const experiences = [
     {
       type: 'work',
+      title: 'Software Engineering Intern',
+      company: 'IBM',
+      location: 'Remote',
+      period: 'Summer 2026 (Incoming)',
+      description: [
+        'Incoming Software Engineering Intern for Summer 2026'
+      ]
+    },
+    {
+      type: 'work',
       title: 'Technology Intern',
       company: 'Blackhawk Network',
       location: 'Coppell, TX',
