@@ -23,6 +23,9 @@ const Hero = () => {
         <p className={`text-xl sm:text-2xl mb-6 font-semibold ${isDark ? 'text-blue-300' : 'text-blue-600'}`}>
           Software Engineer & Data Science Enthusiast
         </p>
+        <p className={`text-lg sm:text-lg mb-4 font-semibold ${isDark ? 'text-green-400' : 'text-green-600'}`}>
+          🎯 Incoming Software Engineering Intern at IBM (Summer 2026)
+        </p>
         <p className={`text-lg sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
           Passionate about building intelligent systems with Python, React, and cloud technologies.
           Specialized in computer vision, data science, and full-stack web development.
