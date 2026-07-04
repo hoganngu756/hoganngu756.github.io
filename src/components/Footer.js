@@ -4,54 +4,45 @@ import { ThemeContext } from '../context/ThemeContext';
 
 const Footer = () => {
   const { isDark } = useContext(ThemeContext);
+  const muted = isDark ? '#484f58' : '#b5ae9f';
+  const link = isDark ? '#6e7681' : '#8a8275';
 
   return (
-    <footer className={`${isDark ? 'bg-slate-900' : 'bg-blue-600'} text-white py-12 px-4 sm:px-6 lg:px-8`}>
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
-            <div className="space-y-3">
-              <a
-
-                href="mailto:hoganngu756@gmail.com"
-                className="flex items-center gap-3 hover:text-blue-400 transition"
-              >
-                <FaEnvelope /> hoganngu756@gmail.com
-              </a>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Follow Me</h3>
-            <div className="flex gap-6">
-              <a
-                href="https://github.com/hoganngu756"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl hover:text-blue-100 transition transform hover:scale-110"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/hogan-nguyen/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl hover:text-blue-100 transition transform hover:scale-110"
-              >
-                <FaLinkedin />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <hr className={`mb-6 ${isDark ? 'border-slate-700' : 'border-blue-500'}`} />
-
-        <div className="text-center text-blue-100 text-sm">
-          <p>© 2026 Hogan Nguyen. All rights reserved.</p>
-          <p>Built with React & Tailwind CSS</p>
+    <footer id="contact">
+      <div className="divider" />
+      <div
+        style={{
+          maxWidth: '820px',
+          margin: '0 auto',
+          padding: '40px 28px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '16px',
+        }}
+      >
+        <p style={{ fontSize: '0.75rem', color: muted, fontFamily: "'JetBrains Mono', monospace" }}>
+          © 2026 Hogan Nguyen
+        </p>
+        <div style={{ display: 'flex', gap: '18px' }}>
+          {[
+            { icon: <FaGithub size={14} />, href: 'https://github.com/hoganngu756', label: 'GitHub' },
+            { icon: <FaLinkedin size={14} />, href: 'https://www.linkedin.com/in/hogan-nguyen/', label: 'LinkedIn' },
+            { icon: <FaEnvelope size={14} />, href: 'mailto:hoganngu756@gmail.com', label: 'Email' },
+          ].map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target={l.href.startsWith('mailto') ? undefined : '_blank'}
+              rel={l.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+              aria-label={l.label}
+              className="accent-link"
+              style={{ color: link }}
+            >
+              {l.icon}
+            </a>
+          ))}
         </div>
       </div>
     </footer>

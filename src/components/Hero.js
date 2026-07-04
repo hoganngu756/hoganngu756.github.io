@@ -1,72 +1,132 @@
 import React, { useContext } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaSun, FaMoon } from 'react-icons/fa';
-import { Link } from 'react-scroll';
+import { FaGithub, FaLinkedin, FaArrowRight } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
 
 const Hero = () => {
-  const { isDark, toggleTheme } = useContext(ThemeContext);
+  const { isDark } = useContext(ThemeContext);
+
+  const heading = isDark ? '#e6edf3' : '#2d2a1e';
+  const sub = isDark ? '#c9d1d9' : '#3d3929';
+  const muted = isDark ? '#6e7681' : '#8a8275';
 
   return (
-    <section className={`${isDark ? 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white' : 'bg-gradient-to-r from-blue-50 via-sky-50 to-blue-50 text-slate-900'} min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative`}>
-      {/* Theme Toggle */}
-      <button
-        onClick={toggleTheme}
-        className={`absolute top-6 right-6 p-2 rounded-lg transition ${isDark ? 'bg-slate-700 hover:bg-slate-600 text-yellow-400' : 'bg-blue-100 hover:bg-blue-200 text-blue-600'}`}
-        aria-label="Toggle theme"
-      >
-        {isDark ? <FaSun size={24} /> : <FaMoon size={24} />}
-      </button>
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
-          Hogan Nguyen
-        </h1>
-        <p className={`text-lg sm:text-lg mb-4 font-semibold ${isDark ? 'text-green-400' : 'text-green-600'}`}>
-           Incoming Intern at IBM (Summer 2026)
-        </p>
-        <p className={`text-lg sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-          Passionate about building intelligent systems with Python, React, and cloud technologies.
-          Specialized in computer vision, data science, and full-stack web development.
-        </p>
-
-        {/* Contact Info */}
-        <div className={`flex flex-col sm:flex-row justify-center gap-6 mb-10 text-sm sm:text-base ${isDark ? 'text-gray-300' : 'text-slate-700'}`}>
-          <a
-            href="mailto:hoganngu756@gmail.com"
-            className={`flex items-center justify-center gap-2 transition ${isDark ? 'hover:text-blue-300' : 'hover:text-blue-600'}`}
+    <section
+      id="hero"
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        padding: '120px 28px 80px',
+      }}
+    >
+      <div style={{ 
+        maxWidth: '820px', 
+        margin: '0 auto', 
+        width: '100%', 
+        display: 'flex', 
+        gap: '48px', 
+        alignItems: 'center', 
+        flexWrap: 'wrap-reverse' 
+      }}>
+        <div style={{ flex: '1 1 400px' }}>
+          {/* Greeting in mono */}
+          <p
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: '0.85rem',
+              color: '#d4976a',
+              marginBottom: '16px',
+              fontWeight: 500,
+            }}
           >
-            <FaEnvelope /> hoganngu756@gmail.com
-          </a>
+            Hi, I'm
+          </p>
+
+          <h1
+            style={{
+              fontSize: 'clamp(2.5rem, 6vw, 3.75rem)',
+              fontWeight: 800,
+              color: heading,
+              letterSpacing: '-0.04em',
+              lineHeight: 1.1,
+              marginBottom: '20px',
+            }}
+          >
+            Hogan Nguyen
+          </h1>
+
+          <p
+            style={{
+              fontSize: '1.1rem',
+              color: sub,
+              marginBottom: '12px',
+              fontWeight: 500,
+              lineHeight: 1.5,
+            }}
+          >
+            Application Consultant Intern at{' '}
+            <span style={{ color: isDark ? '#e6edf3' : '#2d2a1e', fontWeight: 700 }}>IBM</span>
+          </p>
+
+          <p
+            style={{
+              fontSize: '0.95rem',
+              lineHeight: 1.75,
+              color: muted,
+              maxWidth: '500px',
+              marginBottom: '36px',
+            }}
+          >
+            I build AI agents, full-stack applications, and cloud-native tooling.
+            Currently pursuing my MS in Computer Science at UT Dallas.
+          </p>
+
+          {/* Links row */}
+          <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <a
+              href="https://github.com/hoganngu756"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link"
+              style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '0.85rem', fontWeight: 500 }}
+            >
+              <FaGithub size={15} /> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/hogan-nguyen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link"
+              style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '0.85rem', fontWeight: 500 }}
+            >
+              <FaLinkedin size={15} /> LinkedIn
+            </a>
+            <a
+              href="mailto:hoganngu756@gmail.com"
+              className="accent-link"
+              style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '0.85rem', fontWeight: 500 }}
+            >
+              <FaArrowRight size={11} /> hoganngu756@gmail.com
+            </a>
+          </div>
         </div>
 
-        {/* Social Links */}
-        <div className="flex justify-center gap-6 mb-12">
-          <a
-            href="https://github.com/hoganngu756"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-3xl transition transform hover:scale-110 ${isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}`}
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/hogan-nguyen/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-3xl transition transform hover:scale-110 ${isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}`}
-          >
-            <FaLinkedin />
-          </a>
+        <div style={{ flex: '0 0 auto', margin: '0 auto' }}>
+          <img 
+            src="/profile.jpg" 
+            alt="Hogan Nguyen" 
+            style={{ 
+              width: '200px', 
+              height: '200px', 
+              borderRadius: '50%', 
+              objectFit: 'cover', 
+              border: '2px solid #21262d',
+              padding: '6px',
+              backgroundColor: isDark ? '#161b22' : '#fff',
+              transition: 'all 0.25s ease'
+            }} 
+          />
         </div>
-
-        {/* CTA Button */}
-        <Link
-          to="projects"
-          smooth={true}
-          duration={500}
-          className={`inline-block font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 cursor-pointer ${isDark ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
-        >
-          View My Work
-        </Link>
       </div>
     </section>
   );

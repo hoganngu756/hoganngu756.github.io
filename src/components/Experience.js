@@ -1,98 +1,98 @@
 import React, { useContext } from 'react';
-import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
 
 const Experience = () => {
   const { isDark } = useContext(ThemeContext);
+
   const experiences = [
     {
-      type: 'work',
-      title: 'Technology Intern',
+      title: 'Application Consultant Intern',
+      company: 'IBM',
+      location: 'Austin, TX',
+      period: 'May 2026 – Present',
+      bullets: [
+        'Building an internal AI knowledge agent using LangGraph and Python that parses PDFs and specification documents to auto-generate account-specific API configurations, cutting technical onboarding time by ~25%',
+        'Developing a full-stack client project monitor using React, Express.js, PostgreSQL to track use case deliveries and AI-generated insights, reducing reporting overhead by 40%',
+        'Translating business workflows into technical specifications through requirement-gathering sessions and client-facing discovery calls',
+      ],
+    },
+    {
+      title: 'Problem Design Engineer',
+      company: 'Idler (YC25)',
+      location: 'Remote',
+      period: 'Jan 2026 – Present',
+      bullets: [
+        'Authoring test cases and coding problems across Python, Java, and other languages, identifying logic vulnerabilities and edge cases for research-grade AI evaluation problems',
+        'Reviewing complex code changes across OOP and scripting stacks, catching bugs before problems are used to train and benchmark AI models',
+      ],
+    },
+    {
+      title: 'Software Engineer Intern',
       company: 'Blackhawk Network',
       location: 'Coppell, TX',
-      period: 'June 2024 – August 2024',
-      description: [
-        'Automated incident ticket escalation workflows into ServiceNow platform, reducing manual intervention and cutting average response time',
-        'Documented 100+ incident tickets and resolutions to ensure accurate, auditable records',
-        'Utilized Splunk and New Relic to diagnose and resolve performance bottlenecks, improving issue resolution efficiency'
-      ]
-    }
+      period: 'Jun 2024 – Aug 2024',
+      bullets: [
+        'Automated incident ticket escalation workflows in Python on ServiceNow, reducing manual intervention and cutting average response time by ~20%',
+        'Built custom Splunk and New Relic dashboards to track system health and identify performance bottlenecks',
+        'Documented 100+ incident tickets and resolutions for accurate, audit-ready records',
+      ],
+    },
   ];
 
   const education = [
-    {
-      degree: 'Master of Science in Computer Science',
-      school: 'University of Texas at Dallas',
-      location: 'Richardson, TX',
-      period: 'Aug 2025 – Present'
-    },
-    {
-      degree: 'Bachelor of Science in Software Engineering',
-      school: 'University of Texas at Dallas',
-      location: 'Richardson, TX',
-      period: 'Aug 2021 – Dec 2024'
-    }
+    { degree: 'M.S. Computer Science', school: 'University of Texas at Dallas', period: 'Aug 2025 – Present' },
+    { degree: 'B.S. Software Engineering', school: 'University of Texas at Dallas', period: 'Aug 2021 – Dec 2024' },
   ];
 
+  const heading = isDark ? '#e6edf3' : '#2d2a1e';
+  const body = isDark ? '#8b949e' : '#6b6455';
+  const sub = isDark ? '#c9d1d9' : '#3d3929';
+  const muted = isDark ? '#6e7681' : '#8a8275';
+
   return (
-    <section id="experience" className={`${isDark ? 'bg-slate-800' : 'bg-blue-50'} py-16 sm:py-20 px-4 sm:px-6 lg:px-8`}>
-      <div className="max-w-5xl mx-auto">
-        <h2 className={`text-4xl sm:text-5xl font-bold text-center mb-12 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
-          Experience & Education
-        </h2>
+    <section id="experience">
+      <div className="section-container">
+        <h2 className="section-label">Experience</h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Experience */}
-          <div>
-            <div className="flex items-center gap-2 mb-8">
-              <FaBriefcase className={`text-2xl ${isDark ? 'text-blue-400' : 'text-blue-700'}`} />
-              <h3 className={`text-2xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>Work Experience</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {experiences.map((exp, idx) => (
+            <div key={idx} className="card">
+              <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4px', marginBottom: '2px' }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: heading }}>{exp.title}</h3>
+                <span style={{ fontSize: '0.75rem', color: muted, fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}>
+                  {exp.period}
+                </span>
+              </div>
+              <p style={{ fontSize: '0.85rem', fontWeight: 600, color: sub, marginBottom: '14px' }}>
+                {exp.company} <span style={{ color: muted, fontWeight: 400 }}>· {exp.location}</span>
+              </p>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {exp.bullets.map((item, i) => (
+                  <li key={i} style={{ fontSize: '0.835rem', lineHeight: 1.7, color: body, paddingLeft: '16px', position: 'relative' }}>
+                    <span style={{ position: 'absolute', left: 0, color: '#d4976a', fontSize: '0.7rem', top: '3px' }}>▹</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="space-y-6">
-              {experiences.map((exp, idx) => (
-                <div key={idx} className={`${isDark ? 'bg-slate-700' : 'bg-white'} rounded-lg shadow-md p-6 hover:shadow-lg transition`}>
-                  <h4 className={`text-xl font-bold mb-1 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
-                    {exp.title}
-                  </h4>
-                  <p className={`font-semibold mb-1 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>{exp.company}</p>
-                  <p className={`text-sm mb-3 ${isDark ? 'text-gray-300' : 'text-slate-600'}`}>
-                    {exp.location} • {exp.period}
-                  </p>
-                  <ul className="space-y-2">
-                    {exp.description.map((item, idx) => (
-                      <li key={idx} className={`text-sm flex gap-2 ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
-                        <span className="text-blue-600 font-bold">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Education */}
-          <div>
-            <div className="flex items-center gap-2 mb-8">
-              <FaGraduationCap className={`text-2xl ${isDark ? 'text-blue-400' : 'text-blue-700'}`} />
-              <h3 className={`text-2xl font-bold ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>Education</h3>
-            </div>
-            <div className="space-y-6">
-              {education.map((edu, idx) => (
-                <div key={idx} className={`${isDark ? 'bg-slate-700' : 'bg-white'} rounded-lg shadow-md p-6 hover:shadow-lg transition`}>
-                  <h4 className={`text-lg font-bold mb-1 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>
-                    {edu.degree}
-                  </h4>
-                  {edu.track && (
-                    <p className={`font-semibold text-sm mb-2 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>{edu.track}</p>
-                  )}
-                  <p className={`font-semibold mb-1 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>{edu.school}</p>
-                  <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-slate-600'}`}>
-                    {edu.location} • {edu.period}
-                  </p>
+        {/* Education */}
+        <div style={{ marginTop: '56px' }}>
+          <h2 className="section-label">Education</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            {education.map((edu, idx) => (
+              <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4px' }}>
+                <div>
+                  <p style={{ fontSize: '0.95rem', fontWeight: 700, color: heading }}>{edu.degree}</p>
+                  <p style={{ fontSize: '0.85rem', color: body }}>{edu.school}</p>
                 </div>
-              ))}
-            </div>
+                <span style={{ fontSize: '0.75rem', color: muted, fontFamily: "'JetBrains Mono', monospace", fontWeight: 500, alignSelf: 'flex-start', marginTop: '2px' }}>
+                  {edu.period}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
