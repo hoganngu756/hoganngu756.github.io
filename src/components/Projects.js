@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: 'Tennis Analysis System',
       description:
-        'Computer vision pipeline that tracks tennis players and ball movement with 95% accuracy across 10,000+ video frames. Real-time speed calculations via optimized keypoint extraction.',
+        'Computer vision pipeline that tracks tennis players and ball movement with 95.0% accuracy across 10,000+ video frames. Real-time speed calculations via optimized keypoint extraction.',
       tech: ['Python', 'PyTorch', 'YOLOv8', 'Pandas'],
     },
     {

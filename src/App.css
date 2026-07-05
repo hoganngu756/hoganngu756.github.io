@@ -245,3 +245,16 @@ a.accent-link:hover {
   border-radius: 4px;
 }
 
+/* ── Hero section responsiveness ── */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 28px 80px;
+}
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 80px 20px 40px;
+  }
+}
+

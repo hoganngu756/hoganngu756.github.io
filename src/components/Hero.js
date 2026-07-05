@@ -5,12 +5,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '120px 28px 80px',
-      }}
+      className="hero-section"
     >
       <div style={{ 
         maxWidth: '820px', 
@@ -70,7 +65,8 @@ const Hero = () => {
               marginBottom: '36px',
             }}
           >
-            I build AI agents, full-stack applications, and cloud-native tooling.
+            I like building AI agents, full-stack applications, cloud-native tooling, and more.
+            I also love playing tennis and building legos in my free time!
             Currently pursuing my MS in Computer Science at UT Dallas.
           </p>
 
