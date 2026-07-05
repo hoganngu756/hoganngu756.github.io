@@ -80,6 +80,9 @@ html.light .App::before {
 }
 
 /* ── Sections ── */
+section {
+  scroll-margin-top: 56px;
+}
 .section-container {
   max-width: 820px;
   margin: 0 auto;
