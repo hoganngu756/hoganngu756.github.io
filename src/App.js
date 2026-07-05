@@ -13,10 +13,12 @@ function App() {
     <ThemeProvider>
       <div className="App">
         <Navbar />
-        <Hero />
-        <Experience />
-        <Projects />
-        <Skills />
+        <main>
+          <Hero />
+          <Experience />
+          <Projects />
+          <Skills />
+        </main>
         <Footer />
       </div>
     </ThemeProvider>

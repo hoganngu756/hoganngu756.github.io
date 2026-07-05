@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
@@ -13,6 +14,8 @@ const Projects = () => {
       description:
         'Dual-layer security engine using regex heuristics and the Gemini LLM API to detect prompt injections and jailbreaks in PDFs. Hardened against DoS with strict validation and upload limits.',
       tech: ['Java', 'React', 'Spring Boot', 'Gemini API', 'SQLite'],
+      github: 'https://github.com/hoganngu756/pdf-prompt-scanner',
+      demo: 'https://pdf-prompt-scanner.vercel.app',
     },
     {
       title: 'Kubernetes Resource Monitor',
@@ -30,9 +33,37 @@ const Projects = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
           {projects.map((project, idx) => (
             <div key={idx} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-heading)', marginBottom: '10px' }}>
-                {project.title}
-              </h3>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px', gap: '8px' }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-heading)' }}>
+                  {project.title}
+                </h3>
+                <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginTop: '2px' }}>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Source Code"
+                      className="accent-link"
+                      style={{ display: 'inline-flex', color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                    >
+                      <FaGithub size={15} />
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Live Demo"
+                      className="accent-link"
+                      style={{ display: 'inline-flex', color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                    >
+                      <FaExternalLinkAlt size={13} />
+                    </a>
+                  )}
+                </div>
+              </div>
               <p style={{ fontSize: '0.835rem', lineHeight: 1.7, color: 'var(--text-body)', marginBottom: '18px', flex: 1 }}>
                 {project.description}
               </p>
