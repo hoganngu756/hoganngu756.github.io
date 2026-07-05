@@ -1,14 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { FaGithub, FaLinkedin, FaArrowRight } from 'react-icons/fa';
-import { ThemeContext } from '../context/ThemeContext';
 
 const Hero = () => {
-  const { isDark } = useContext(ThemeContext);
-
-  const heading = isDark ? '#e6edf3' : '#2d2a1e';
-  const sub = isDark ? '#c9d1d9' : '#3d3929';
-  const muted = isDark ? '#6e7681' : '#8a8275';
-
   return (
     <section
       id="hero"
@@ -34,7 +27,7 @@ const Hero = () => {
             style={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: '0.85rem',
-              color: '#d4976a',
+              color: 'var(--accent-color)',
               marginBottom: '16px',
               fontWeight: 500,
             }}
@@ -46,7 +39,7 @@ const Hero = () => {
             style={{
               fontSize: 'clamp(2.5rem, 6vw, 3.75rem)',
               fontWeight: 800,
-              color: heading,
+              color: 'var(--text-heading)',
               letterSpacing: '-0.04em',
               lineHeight: 1.1,
               marginBottom: '20px',
@@ -58,21 +51,21 @@ const Hero = () => {
           <p
             style={{
               fontSize: '1.1rem',
-              color: sub,
+              color: 'var(--text-sub)',
               marginBottom: '12px',
               fontWeight: 500,
               lineHeight: 1.5,
             }}
           >
             Application Consultant Intern at{' '}
-            <span style={{ color: isDark ? '#e6edf3' : '#2d2a1e', fontWeight: 700 }}>IBM</span>
+            <span style={{ color: 'var(--text-heading)', fontWeight: 700 }}>IBM</span>
           </p>
 
           <p
             style={{
               fontSize: '0.95rem',
               lineHeight: 1.75,
-              color: muted,
+              color: 'var(--text-body)',
               maxWidth: '500px',
               marginBottom: '36px',
             }}
@@ -120,9 +113,9 @@ const Hero = () => {
               height: '200px', 
               borderRadius: '50%', 
               objectFit: 'cover', 
-              border: '2px solid #21262d',
+              border: '2px solid var(--card-border)',
               padding: '6px',
-              backgroundColor: isDark ? '#161b22' : '#fff',
+              backgroundColor: 'var(--card-bg)',
               transition: 'all 0.25s ease'
             }} 
           />

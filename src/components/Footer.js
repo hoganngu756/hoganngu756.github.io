@@ -1,12 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { ThemeContext } from '../context/ThemeContext';
 
 const Footer = () => {
-  const { isDark } = useContext(ThemeContext);
-  const muted = isDark ? '#484f58' : '#b5ae9f';
-  const link = isDark ? '#6e7681' : '#8a8275';
-
   return (
     <footer id="contact">
       <div className="divider" />
@@ -22,7 +17,7 @@ const Footer = () => {
           gap: '16px',
         }}
       >
-        <p style={{ fontSize: '0.75rem', color: muted, fontFamily: "'JetBrains Mono', monospace" }}>
+        <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}>
           © 2026 Hogan Nguyen
         </p>
         <div style={{ display: 'flex', gap: '18px' }}>
@@ -38,7 +33,7 @@ const Footer = () => {
               rel={l.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
               aria-label={l.label}
               className="accent-link"
-              style={{ color: link }}
+              style={{ color: 'var(--text-muted)' }}
             >
               {l.icon}
             </a>

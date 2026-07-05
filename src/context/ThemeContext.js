@@ -13,9 +13,16 @@ export const ThemeProvider = ({ children }) => {
     }
   }, []);
 
-  // Save theme to localStorage when it changes
+  // Save theme to localStorage and sync with documentElement when it changes
   useEffect(() => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+    }
   }, [isDark]);
 
   const toggleTheme = () => {

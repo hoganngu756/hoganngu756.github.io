@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
+import React from 'react';
 
 const Experience = () => {
-  const { isDark } = useContext(ThemeContext);
-
   const experiences = [
     {
       title: 'Application Consultant Intern',
@@ -44,11 +41,6 @@ const Experience = () => {
     { degree: 'B.S. Software Engineering', school: 'University of Texas at Dallas', period: 'Aug 2021 – Dec 2024' },
   ];
 
-  const heading = isDark ? '#e6edf3' : '#2d2a1e';
-  const body = isDark ? '#8b949e' : '#6b6455';
-  const sub = isDark ? '#c9d1d9' : '#3d3929';
-  const muted = isDark ? '#6e7681' : '#8a8275';
-
   return (
     <section id="experience">
       <div className="section-container">
@@ -58,18 +50,18 @@ const Experience = () => {
           {experiences.map((exp, idx) => (
             <div key={idx} className="card">
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4px', marginBottom: '2px' }}>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: heading }}>{exp.title}</h3>
-                <span style={{ fontSize: '0.75rem', color: muted, fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}>
+                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-heading)' }}>{exp.title}</h3>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}>
                   {exp.period}
                 </span>
               </div>
-              <p style={{ fontSize: '0.85rem', fontWeight: 600, color: sub, marginBottom: '14px' }}>
-                {exp.company} <span style={{ color: muted, fontWeight: 400 }}>· {exp.location}</span>
+              <p style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-sub)', marginBottom: '14px' }}>
+                {exp.company} <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>· {exp.location}</span>
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {exp.bullets.map((item, i) => (
-                  <li key={i} style={{ fontSize: '0.835rem', lineHeight: 1.7, color: body, paddingLeft: '16px', position: 'relative' }}>
-                    <span style={{ position: 'absolute', left: 0, color: '#d4976a', fontSize: '0.7rem', top: '3px' }}>▹</span>
+                  <li key={i} style={{ fontSize: '0.835rem', lineHeight: 1.7, color: 'var(--text-body)', paddingLeft: '16px', position: 'relative' }}>
+                    <span style={{ position: 'absolute', left: 0, color: 'var(--accent-color)', fontSize: '0.7rem', top: '3px' }}>▹</span>
                     {item}
                   </li>
                 ))}
@@ -85,10 +77,10 @@ const Experience = () => {
             {education.map((edu, idx) => (
               <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4px' }}>
                 <div>
-                  <p style={{ fontSize: '0.95rem', fontWeight: 700, color: heading }}>{edu.degree}</p>
-                  <p style={{ fontSize: '0.85rem', color: body }}>{edu.school}</p>
+                  <p style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-heading)' }}>{edu.degree}</p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-body)' }}>{edu.school}</p>
                 </div>
-                <span style={{ fontSize: '0.75rem', color: muted, fontFamily: "'JetBrains Mono', monospace", fontWeight: 500, alignSelf: 'flex-start', marginTop: '2px' }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace", fontWeight: 500, alignSelf: 'flex-start', marginTop: '2px' }}>
                   {edu.period}
                 </span>
               </div>

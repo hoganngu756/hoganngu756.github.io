@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
+import React from 'react';
 
 const Projects = () => {
-  const { isDark } = useContext(ThemeContext);
-
   const projects = [
     {
       title: 'Tennis Analysis System',
@@ -25,9 +22,6 @@ const Projects = () => {
     },
   ];
 
-  const heading = isDark ? '#e6edf3' : '#2d2a1e';
-  const body = isDark ? '#8b949e' : '#6b6455';
-
   return (
     <section id="projects">
       <div className="section-container">
@@ -36,10 +30,10 @@ const Projects = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
           {projects.map((project, idx) => (
             <div key={idx} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: heading, marginBottom: '10px' }}>
+              <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-heading)', marginBottom: '10px' }}>
                 {project.title}
               </h3>
-              <p style={{ fontSize: '0.835rem', lineHeight: 1.7, color: body, marginBottom: '18px', flex: 1 }}>
+              <p style={{ fontSize: '0.835rem', lineHeight: 1.7, color: 'var(--text-body)', marginBottom: '18px', flex: 1 }}>
                 {project.description}
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
