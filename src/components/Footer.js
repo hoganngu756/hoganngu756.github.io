@@ -1,44 +1,52 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa';
 
-const Footer = () => {
+const Footer = ({ onCopyEmail }) => {
+  const handleCopy = () => {
+    navigator.clipboard.writeText('hoganngu756@gmail.com').then(() => {
+      if (onCopyEmail) onCopyEmail('Email copied to clipboard!');
+    });
+  };
+
   return (
-    <footer id="contact">
-      <div className="divider" />
-      <div
-        style={{
-          maxWidth: '820px',
-          margin: '0 auto',
-          padding: '40px 28px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '16px',
-        }}
-      >
-        <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}>
-          © 2026 Hogan Nguyen
-        </p>
-        <div style={{ display: 'flex', gap: '18px' }}>
-          {[
-            { icon: <FaGithub size={14} />, href: 'https://github.com/hoganngu756', label: 'GitHub' },
-            { icon: <FaLinkedin size={14} />, href: 'https://www.linkedin.com/in/hogan-nguyen/', label: 'LinkedIn' },
-            { icon: <FaEnvelope size={14} />, href: 'mailto:hoganngu756@gmail.com', label: 'Email' },
-          ].map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              target={l.href.startsWith('mailto') ? undefined : '_blank'}
-              rel={l.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              aria-label={l.label}
-              className="accent-link"
-              style={{ color: 'var(--text-muted)' }}
-            >
-              {l.icon}
-            </a>
-          ))}
+    <footer className="mt-20 border-t border-lightBorder dark:border-darkBorder py-12 px-6">
+      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-slate-500 dark:text-slate-400">
+        <div className="flex items-center gap-1.5">
+          <span>Designed & Built by</span>
+          <span className="font-semibold text-slate-700 dark:text-slate-200">Hogan Nguyen</span>
         </div>
+
+        <div className="flex items-center gap-5">
+          <a
+            href="https://github.com/hoganngu756"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1"
+            title="GitHub"
+          >
+            <FaGithub size={16} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/hogan-nguyen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1"
+            title="LinkedIn"
+          >
+            <FaLinkedin size={16} />
+          </a>
+          <button
+            onClick={handleCopy}
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1"
+            title="Copy Email"
+          >
+            <FaEnvelope size={15} />
+          </button>
+        </div>
+
+        <p className="font-mono text-[11px]">
+          © {new Date().getFullYear()} Hogan Nguyen
+        </p>
       </div>
     </footer>
   );

@@ -42,50 +42,71 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience">
-      <div className="section-container">
-        <h2 className="section-label">Experience</h2>
+    <section id="experience" className="py-16 px-6 max-w-4xl mx-auto">
+      <div className="flex items-center gap-4 mb-10">
+        <h2 className="font-mono text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">
+          Experience
+        </h2>
+        <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
+      </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {experiences.map((exp, idx) => (
-            <div key={idx} className="card">
-              <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4px', marginBottom: '2px' }}>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-heading)' }}>{exp.title}</h3>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}>
-                  {exp.period}
-                </span>
-              </div>
-              <p style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-sub)', marginBottom: '14px' }}>
-                {exp.company} <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>· {exp.location}</span>
-              </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {exp.bullets.map((item, i) => (
-                  <li key={i} style={{ fontSize: '0.835rem', lineHeight: 1.7, color: 'var(--text-body)', paddingLeft: '16px', position: 'relative' }}>
-                    <span style={{ position: 'absolute', left: 0, color: 'var(--accent-color)', fontSize: '0.7rem', top: '3px' }}>▹</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+      <div className="space-y-6">
+        {experiences.map((exp, idx) => (
+          <div
+            key={idx}
+            className="group p-6 rounded-xl bg-lightCard dark:bg-darkCard border border-lightBorder dark:border-darkBorder border-l-4 border-l-blue-500 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-lg dark:hover:shadow-blue-900/10"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {exp.title}
+              </h3>
+              <span className="font-mono text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md self-start sm:self-auto">
+                {exp.period}
+              </span>
             </div>
-          ))}
+
+            <p className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4">
+              {exp.company}{' '}
+              <span className="font-normal text-slate-500 dark:text-slate-400">· {exp.location}</span>
+            </p>
+
+            <ul className="space-y-2.5 list-none p-0 m-0">
+              {exp.bullets.map((bullet, i) => (
+                <li
+                  key={i}
+                  className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex items-start gap-2.5"
+                >
+                  <span className="text-blue-500 dark:text-blue-400 mt-1 flex-shrink-0 text-xs">▹</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* Education */}
+      <div className="mt-14">
+        <div className="flex items-center gap-4 mb-8">
+          <h2 className="font-mono text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">
+            Education
+          </h2>
+          <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
         </div>
 
-        {/* Education */}
-        <div style={{ marginTop: '56px' }}>
-          <h2 className="section-label">Education</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            {education.map((edu, idx) => (
-              <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4px' }}>
-                <div>
-                  <p style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-heading)' }}>{edu.degree}</p>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-body)' }}>{edu.school}</p>
-                </div>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace", fontWeight: 500, alignSelf: 'flex-start', marginTop: '2px' }}>
-                  {edu.period}
-                </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {education.map((edu, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-xl bg-lightCard dark:bg-darkCard border border-lightBorder dark:border-darkBorder hover:border-blue-500/50 transition-colors"
+            >
+              <div className="flex justify-between items-start mb-1">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{edu.degree}</p>
+                <span className="font-mono text-xs text-slate-500 dark:text-slate-400">{edu.period}</span>
               </div>
-            ))}
-          </div>
+              <p className="text-xs text-slate-600 dark:text-slate-400">{edu.school}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
