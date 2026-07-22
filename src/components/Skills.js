@@ -4,14 +4,14 @@ const Skills = ({ selectedSkill, setSelectedSkill }) => {
   const categories = [
     {
       label: 'Languages',
-      items: ['Java', 'Python', 'C/C++', 'SQL', 'JavaScript', 'HTML/CSS', 'C#'],
+      items: ['Java', 'Python', 'C#', 'C/C++', 'SQL', 'JavaScript', 'HTML/CSS'],
     },
     {
       label: 'Frameworks & Libraries',
-      items: ['React', 'Express.js', 'Node.js', 'Spring Boot', '.NET', 'REST APIs', 'LangGraph', 'PyTorch'],
+      items: ['React', 'Next.js', 'Node.js', 'Spring Boot', '.NET', 'REST APIs', 'LangGraph', 'PyTorch'],
     },
     {
-      label: 'Tools & Infrastructure',
+      label: 'Developer Tools & Infra',
       items: ['PostgreSQL', 'SQLite', 'Docker', 'Kubernetes', 'Prometheus', 'AWS (EC2, Lambda)', 'Git', 'Splunk', 'New Relic'],
     },
   ];
@@ -33,7 +33,7 @@ const Skills = ({ selectedSkill, setSelectedSkill }) => {
     <section id="skills" className="py-16 px-6 max-w-4xl mx-auto">
       <div className="flex items-center gap-4 mb-8">
         <h2 className="font-mono text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">
-          Skills
+          Technical Skills
         </h2>
         <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
       </div>

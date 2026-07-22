@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCheck, FaArrowRight } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCheck, FaFileAlt } from 'react-icons/fa';
 
 const Hero = ({ onCopyEmail }) => {
   const [copied, setCopied] = React.useState(false);
@@ -31,23 +31,32 @@ const Hero = ({ onCopyEmail }) => {
           </h1>
 
           <p className="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-300 mb-4 leading-snug">
-            Application Consultant Intern at{' '}
+            AI Consultant Intern at{' '}
             <span className="text-blue-600 dark:text-blue-400 font-bold">IBM</span>
           </p>
 
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-lg mb-8 leading-relaxed mx-auto md:mx-0">
-            I like building AI agents, full-stack applications, cloud-native tooling, and more.
-            I also love playing tennis and building legos in my free time!
-            Currently pursuing my MS in Computer Science at UT Dallas.
+            Building AI agents using LangGraph & Python, full-stack applications with React & Next.js, and cloud-native monitoring tooling.
+            Pursuing my MS in Computer Science at UT Dallas.
           </p>
 
-          {/* Social Links & Copy Email */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+          {/* Social Links, Resume & Copy Email */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3.5">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-md shadow-blue-500/20 hover:scale-105 active:scale-95"
+            >
+              <FaFileAlt size={15} />
+              <span>Resume PDF</span>
+            </a>
+
             <a
               href="https://github.com/hoganngu756"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-200/70 hover:bg-slate-300/80 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-200/80 hover:bg-slate-300 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95"
             >
               <FaGithub size={16} />
               <span>GitHub</span>
@@ -57,7 +66,7 @@ const Hero = ({ onCopyEmail }) => {
               href="https://www.linkedin.com/in/hogan-nguyen/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-200/70 hover:bg-slate-300/80 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-200/80 hover:bg-slate-300 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95"
             >
               <FaLinkedin size={16} className="text-blue-600 dark:text-blue-400" />
               <span>LinkedIn</span>
@@ -65,18 +74,18 @@ const Hero = ({ onCopyEmail }) => {
 
             <button
               onClick={handleCopyEmail}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-medium transition-all shadow-md shadow-blue-500/20 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-200/80 hover:bg-slate-300 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 focus:outline-none"
               title="Click to copy email address"
             >
               {copied ? (
                 <>
-                  <FaCheck size={14} className="text-emerald-300" />
+                  <FaCheck size={14} className="text-emerald-500" />
                   <span>Copied!</span>
                 </>
               ) : (
                 <>
                   <FaEnvelope size={14} />
-                  <span>hoganngu756@gmail.com</span>
+                  <span>Email</span>
                 </>
               )}
             </button>

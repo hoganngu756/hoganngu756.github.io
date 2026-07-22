@@ -11,32 +11,44 @@ const Projects = ({ selectedSkill, setSelectedSkill }) => {
       title: 'Tennis Analysis System',
       category: 'AI & ML',
       description:
-        'Computer vision pipeline that tracks tennis players and ball movement with 95.0% accuracy across 10,000+ video frames. Real-time speed calculations via optimized keypoint extraction.',
+        'Engineered a computer vision pipeline to track tennis players and ball movement with 95% accuracy across 10,000+ video frames. Optimized dataset preprocessing and keypoint extraction for real-time movement analysis.',
       details:
-        'Built using OpenCV, PyTorch, and YOLOv8 keypoint detection models. Performs multi-object tracking (MOT) for players and court line detection to translate pixel coordinates into real-world court distance and calculate shot velocity dynamically.',
-      tech: ['Python', 'PyTorch', 'YOLOv8', 'Pandas', 'OpenCV'],
+        'Built using OpenCV, PyTorch, and YOLOv8 keypoint detection models. Performs multi-object tracking (MOT) for players and court line detection to translate pixel coordinates into real-world court distance and calculate player and ball speed dynamically.',
+      bullets: [
+        'Engineered a computer vision pipeline to track tennis players and ball movement with 95% accuracy across 10,000+ video frames',
+        'Optimized dataset preprocessing and keypoint extraction to enable real-time movement analysis, including player and ball speed calculations',
+      ],
+      tech: ['Python', 'PyTorch', 'YOLOv8', 'Pandas'],
       github: 'https://github.com/hoganngu756',
     },
     {
       id: 'pdf-security-scanner',
-      title: 'Document Security Scanner',
+      title: 'Document Security and Prompt Scanner',
       category: 'Full-Stack',
       description:
-        'Dual-layer security engine using regex heuristics and the Gemini LLM API to detect prompt injections and jailbreaks in PDFs. Hardened against DoS with strict validation and upload limits.',
+        'Architected a dual-layer security engine using regex heuristics and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images.',
       details:
-        'Combines deterministic heuristic filtering with async Gemini LLM prompt auditing to flag malicious injection vectors in user-uploaded PDF files. Features rate limiting, payload sanitization, and clean execution sandboxing.',
-      tech: ['Java', 'React', 'Spring Boot', 'Gemini API', 'SQLite', 'JavaScript'],
+        'Combines deterministic heuristic filtering with async Gemini LLM prompt auditing to flag malicious injection vectors in user-uploaded PDF files. Hardened the architecture against denial-of-service (DoS) attacks by implementing strict file-type validation and upload payload limits.',
+      bullets: [
+        'Architected a dual-layer security engine using regex heuristics and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images',
+        'Hardened the architecture against denial-of-service (DoS) attacks by implementing strict file-type validation and upload payload limits',
+      ],
+      tech: ['Java', 'React', 'Spring Boot', 'Gemini API', 'SQLite'],
       github: 'https://github.com/hoganngu756/pdf-prompt-scanner',
       demo: 'https://pdf-prompt-scanner.vercel.app',
     },
     {
       id: 'k8s-resource-monitor',
-      title: 'Kubernetes Resource Monitor',
+      title: 'Kubernetes Resource and Cost Monitor',
       category: 'Cloud & DevOps',
       description:
-        'Automated pipeline querying container metrics from Prometheus, mapping them against pricing models to flag over-provisioned workloads and generate right-sizing reports.',
+        'Automated pipeline querying container metrics from Prometheus, mapping them against pricing models to flag over-provisioned workloads and surfacing an estimated 18% in cost savings.',
       details:
-        'Integrates Prometheus metric collection with custom cost estimation formulas based on cloud instance pricing APIs. Provides automated slack notifications and right-sizing recommendations for CPU/Memory requests.',
+        'Integrates Prometheus metric collection with custom cost estimation formulas based on cloud instance pricing models. Designed an interactive interface translating cluster resource deltas into efficiency reports.',
+      bullets: [
+        'Developed an automated pipeline that queries container resource metrics from Prometheus and maps them against pricing models to flag over-provisioned Kubernetes workloads',
+        'Designed an interactive interface translating cluster resource deltas into efficiency reports, surfacing an estimated 18% in potential cost savings',
+      ],
       tech: ['Python', 'Kubernetes', 'Prometheus', 'OpenCost', 'Docker'],
       github: 'https://github.com/hoganngu756',
     },
@@ -210,9 +222,14 @@ const Projects = ({ selectedSkill, setSelectedSkill }) => {
               {selectedProject.title}
             </h3>
 
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-              {selectedProject.details || selectedProject.description}
-            </p>
+            <div className="space-y-2 mb-6">
+              {selectedProject.bullets.map((b, idx) => (
+                <p key={idx} className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex items-start gap-2">
+                  <span className="text-blue-500 mt-1">▹</span>
+                  <span>{b}</span>
+                </p>
+              ))}
+            </div>
 
             <div className="flex flex-wrap gap-2 mb-6">
               {selectedProject.tech.map((t, i) => (

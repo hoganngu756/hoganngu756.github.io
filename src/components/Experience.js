@@ -3,24 +3,25 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Application Consultant Intern',
+      title: 'AI Consultant Intern',
       company: 'IBM',
       location: 'Austin, TX',
       period: 'May 2026 – Present',
       bullets: [
-        'Building an internal AI knowledge agent using LangGraph and Python that parses PDFs and specification documents to auto-generate account-specific API configurations, cutting technical onboarding time by ~25%',
-        'Developing a full-stack client project monitor using React, Express.js, PostgreSQL to track use case deliveries and AI-generated insights, reducing reporting overhead by 40%',
-        'Translating business workflows into technical specifications through requirement-gathering sessions and client-facing discovery calls',
+        'Building an AI agent using LangGraph and Python that ingests meeting transcripts to auto-generate summaries and weekly status emails for stakeholders, saving an estimated 3+ hours/week',
+        'Developing a full-stack reporting dashboard using React, Next.js, and PostgreSQL to automatically compile weekly client-facing reports, replacing manual PowerPoint reporting and cutting overhead by 40%',
+        'Translating business workflows into technical specifications across requirement-gathering sessions and client-facing discovery calls',
+        'Managing enterprise AI consulting engagements in monday.com under senior guidance, establishing delivery roadmaps and milestone visibility for cross-functional teams',
       ],
     },
     {
       title: 'Problem Design Engineer',
       company: 'Idler (YC25)',
-      location: 'Remote',
+      location: 'Remote (Part-time)',
       period: 'Jan 2026 – Present',
       bullets: [
-        'Authoring test cases and coding problems across Python, Java, and other languages, identifying logic vulnerabilities and edge cases for research-grade AI evaluation problems',
-        'Reviewing complex code changes across OOP and scripting stacks, catching bugs before problems are used to train and benchmark AI models',
+        'Authoring test cases and coding problems across Python, Java, and other languages, identifying logic vulnerabilities and edge cases to improve the reliability of research-grade problems used for AI evaluation',
+        'Reviewing complex code changes across different OOP and scripting stacks, providing feedback to fellow problem designers to maintain quality standards before deployment',
       ],
     },
     {
@@ -29,16 +30,16 @@ const Experience = () => {
       location: 'Coppell, TX',
       period: 'Jun 2024 – Aug 2024',
       bullets: [
-        'Automated incident ticket escalation workflows in Python on ServiceNow, reducing manual intervention and cutting average response time by ~20%',
-        'Built custom Splunk and New Relic dashboards to track system health and identify performance bottlenecks',
-        'Documented 100+ incident tickets and resolutions for accurate, audit-ready records',
+        'Automated incident ticket escalation workflows in Python on the ServiceNow platform, reducing manual intervention and cutting average response time by roughly 20%',
+        'Built custom Splunk and New Relic dashboards to track system health and proactively identify performance bottlenecks',
+        'Documented 100+ incident tickets and resolutions, ensuring accurate, audit-ready records',
       ],
     },
   ];
 
   const education = [
-    { degree: 'M.S. Computer Science', school: 'University of Texas at Dallas', period: 'Aug 2025 – Present' },
-    { degree: 'B.S. Software Engineering', school: 'University of Texas at Dallas', period: 'Aug 2021 – Dec 2024' },
+    { degree: 'M.S. Computer Science', school: 'University of Texas at Dallas', location: 'Richardson, TX', period: 'Expected May 2027' },
+    { degree: 'B.S. Software Engineering', school: 'University of Texas at Dallas', location: 'Richardson, TX', period: 'December 2024' },
   ];
 
   return (
@@ -100,11 +101,11 @@ const Experience = () => {
               key={idx}
               className="p-5 rounded-xl bg-lightCard dark:bg-darkCard border border-lightBorder dark:border-darkBorder hover:border-blue-500/50 transition-colors"
             >
-              <div className="flex justify-between items-start mb-1">
+              <div className="flex justify-between items-start mb-1 gap-2">
                 <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{edu.degree}</p>
-                <span className="font-mono text-xs text-slate-500 dark:text-slate-400">{edu.period}</span>
+                <span className="font-mono text-xs text-slate-500 dark:text-slate-400 flex-shrink-0">{edu.period}</span>
               </div>
-              <p className="text-xs text-slate-600 dark:text-slate-400">{edu.school}</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">{edu.school} · {edu.location}</p>
             </div>
           ))}
         </div>

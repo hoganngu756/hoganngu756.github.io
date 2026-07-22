@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 
 const Footer = ({ onCopyEmail }) => {
   const handleCopy = () => {
@@ -17,6 +17,16 @@ const Footer = ({ onCopyEmail }) => {
         </div>
 
         <div className="flex items-center gap-5">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1 flex items-center gap-1 font-semibold"
+            title="Resume PDF"
+          >
+            <FaFileAlt size={14} />
+            <span>Resume</span>
+          </a>
           <a
             href="https://github.com/hoganngu756"
             target="_blank"

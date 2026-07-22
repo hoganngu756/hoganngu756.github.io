@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
+import { FaSun, FaMoon, FaBars, FaTimes, FaFileAlt } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
 
 const Navbar = ({ activeSection }) => {
@@ -54,7 +54,7 @@ const Navbar = ({ activeSection }) => {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <ul className="flex items-center gap-6 list-none m-0 p-0">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
@@ -78,6 +78,17 @@ const Navbar = ({ activeSection }) => {
             })}
           </ul>
 
+          {/* Resume Link */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-500/40 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10 text-xs font-semibold transition-all hover:scale-105"
+          >
+            <FaFileAlt size={12} />
+            <span>Resume</span>
+          </a>
+
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
@@ -88,8 +99,18 @@ const Navbar = ({ activeSection }) => {
           </button>
         </div>
 
-        {/* Mobile controls: Theme toggle + Hamburger */}
+        {/* Mobile controls: Resume + Theme toggle + Hamburger */}
         <div className="flex md:hidden items-center gap-3">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-blue-500/40 text-blue-600 dark:text-blue-400 text-xs font-semibold"
+          >
+            <FaFileAlt size={11} />
+            <span>Resume</span>
+          </a>
+
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
@@ -147,6 +168,18 @@ const Navbar = ({ activeSection }) => {
               );
             })}
           </ul>
+
+          <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-blue-600 text-white font-medium text-sm hover:bg-blue-500 transition-colors shadow-md"
+            >
+              <FaFileAlt size={14} />
+              <span>View Resume (PDF)</span>
+            </a>
+          </div>
         </div>
       </div>
     </header>
