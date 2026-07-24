@@ -8,4 +8,5 @@ A modern, responsive portfolio website built with React and Tailwind CSS, showca
 - npm or yarn
 - Git
 
-Built using React, Tailwind CSS, and GitHub Pages
+Built using React, Tailwind CSS, and GitHub Pages.
+
