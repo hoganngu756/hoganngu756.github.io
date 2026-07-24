@@ -7,6 +7,22 @@
     scroll-behavior: smooth;
   }
 
+  /* Blanket opt-out: anything animated above stops moving when the OS asks it to. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   body {
     @apply bg-lightBg text-slate-800 dark:bg-darkBg dark:text-slate-300 font-sans transition-colors duration-300 antialiased selection:bg-blue-500/30 selection:text-blue-500;
   }

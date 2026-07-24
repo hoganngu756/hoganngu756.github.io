@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { FaSun, FaMoon, FaBars, FaTimes, FaFileAlt } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
+import { profile } from '../data/content';
 
 const Navbar = ({ activeSection }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,6 +30,7 @@ const Navbar = ({ activeSection }) => {
     { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'Skills', href: '#skills', id: 'skills' },
+    { label: 'Terminal', href: '#terminal', id: 'terminal' },
   ];
 
   const handleNavClick = () => {
@@ -80,7 +82,7 @@ const Navbar = ({ activeSection }) => {
 
           {/* Resume Link */}
           <a
-            href="/resume.pdf"
+            href={profile.resume}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-500/40 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10 text-xs font-semibold transition-all hover:scale-105"
@@ -102,7 +104,7 @@ const Navbar = ({ activeSection }) => {
         {/* Mobile controls: Resume + Theme toggle + Hamburger */}
         <div className="flex md:hidden items-center gap-3">
           <a
-            href="/resume.pdf"
+            href={profile.resume}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-blue-500/40 text-blue-600 dark:text-blue-400 text-xs font-semibold"
@@ -171,7 +173,7 @@ const Navbar = ({ activeSection }) => {
 
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
             <a
-              href="/resume.pdf"
+              href={profile.resume}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-blue-600 text-white font-medium text-sm hover:bg-blue-500 transition-colors shadow-md"

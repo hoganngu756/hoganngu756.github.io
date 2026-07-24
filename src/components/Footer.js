@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
+import { profile } from '../data/content';
 
 const Footer = ({ onCopyEmail }) => {
   const handleCopy = () => {
-    navigator.clipboard.writeText('hoganngu756@gmail.com').then(() => {
+    navigator.clipboard.writeText(profile.email).then(() => {
       if (onCopyEmail) onCopyEmail('Email copied to clipboard!');
     });
   };
@@ -13,12 +14,12 @@ const Footer = ({ onCopyEmail }) => {
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-slate-500 dark:text-slate-400">
         <div className="flex items-center gap-1.5">
           <span>Designed & Built by</span>
-          <span className="font-semibold text-slate-700 dark:text-slate-200">Hogan Nguyen</span>
+          <span className="font-semibold text-slate-700 dark:text-slate-200">{profile.name}</span>
         </div>
 
         <div className="flex items-center gap-5">
           <a
-            href="/resume.pdf"
+            href={profile.resume}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1 flex items-center gap-1 font-semibold"
@@ -28,7 +29,7 @@ const Footer = ({ onCopyEmail }) => {
             <span>Resume</span>
           </a>
           <a
-            href="https://github.com/hoganngu756"
+            href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1"
@@ -37,7 +38,7 @@ const Footer = ({ onCopyEmail }) => {
             <FaGithub size={16} />
           </a>
           <a
-            href="https://www.linkedin.com/in/hogan-nguyen/"
+            href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1"

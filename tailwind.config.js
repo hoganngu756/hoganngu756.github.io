@@ -22,12 +22,17 @@ export default {
         brandBlueHover: '#60a5fa',
       },
       animation: {
-        'fade-in': 'fadeIn 0.3s ease-out forwards',
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
         'slide-down': 'slideDown 0.3s ease-out forwards',
         'slide-up': 'slideUp 0.3s ease-out forwards',
         'bounce-subtle': 'bounceSubtle 2s infinite',
+        blink: 'blink 1.1s step-end infinite',
       },
       keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(8px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
