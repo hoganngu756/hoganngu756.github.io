@@ -28,10 +28,10 @@ export const experiences = [
     location: 'Austin, TX',
     period: 'May 2026 – Present',
     bullets: [
-      'Building an AI agent using LangGraph and Python that ingests meeting transcripts to auto-generate summaries and weekly status emails for stakeholders, saving an estimated 3+ hours/week',
-      'Developing a full-stack reporting dashboard using React, Next.js, and PostgreSQL to automatically compile weekly client-facing reports, replacing manual PowerPoint reporting and cutting overhead by 40%',
-      'Translating business workflows into technical specifications across requirement-gathering sessions and client-facing discovery calls',
-      'Managing enterprise AI consulting engagements in monday.com under senior guidance, establishing delivery roadmaps and milestone visibility for cross-functional teams',
+      'Creating an AI agent using LangGraph and Python to unify ticket data across SAP and ServiceNow, leveraging historical context to deliver automated resolution suggestions and priority flags',
+      'Building a reporting dashboard using React, Next.js, and PostgreSQL to automate weekly client deliverables, eliminating manual PowerPoint workflows and cutting overhead by 40%',
+      'Coordinating client discovery sessions to translate business requirements into technical specifications that shape engineering work each sprint',
+      'Tracking cross-functional deliverables and milestones in monday.com, giving senior consultants real-time visibility into engagement progress',
     ],
   },
   {
@@ -40,8 +40,8 @@ export const experiences = [
     location: 'Remote (Part-time)',
     period: 'Jan 2026 – Present',
     bullets: [
-      'Authoring test cases and coding problems across Python, Java, and other languages, identifying logic vulnerabilities and edge cases to improve the reliability of research-grade problems used for AI evaluation',
-      'Reviewing complex code changes across different OOP and scripting stacks, providing feedback to fellow problem designers to maintain quality standards before deployment',
+      'Authoring edge-case test suites and complex coding problems in Python and Java to benchmark LLM code-generation accuracy and identify subtle logic vulnerabilities',
+      'Reviewing code across OOP and scripting stacks to maintain quality standards and test coverage prior to benchmark deployment',
     ],
   },
   {
@@ -50,9 +50,9 @@ export const experiences = [
     location: 'Coppell, TX',
     period: 'Jun 2024 – Aug 2024',
     bullets: [
-      'Automated incident ticket escalation workflows in Python on the ServiceNow platform, reducing manual intervention and cutting average response time by roughly 20%',
-      'Built custom Splunk and New Relic dashboards to track system health and proactively identify performance bottlenecks',
-      'Documented 100+ incident tickets and resolutions, ensuring accurate, audit-ready records',
+      'Automated incident ticket escalation workflows in Python on ServiceNow, reducing manual intervention and cutting average response time by 20%',
+      'Built custom Splunk and New Relic dashboards to track real-time system health and identify infrastructure bottlenecks',
+      'Documented 100+ incident tickets and resolution procedures in ServiceNow, establishing standardized troubleshooting logs for team audit readiness',
     ],
   },
 ];
@@ -97,8 +97,8 @@ export const projects = [
       'Architected a dual-layer security engine using regex heuristics and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images.',
     bullets: [
       'Architected a dual-layer security engine using regex heuristics and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images',
+      'Developed a full-stack application for uploading documents, triggering scans, and surfacing flagged results in real time',
       'Hardened the architecture against denial-of-service (DoS) attacks by implementing strict file-type validation and upload payload limits',
-      'Combined deterministic heuristic filtering with async Gemini prompt auditing to flag malicious injection vectors in user-uploaded files',
     ],
     tech: ['Java', 'React', 'Spring Boot', 'Gemini API', 'SQLite'],
     github: 'https://github.com/hoganngu756/pdf-prompt-scanner',
@@ -109,10 +109,10 @@ export const projects = [
     title: 'Kubernetes Resource and Cost Monitor',
     category: 'Cloud & DevOps',
     description:
-      'Automated pipeline querying container metrics from Prometheus, mapping them against pricing models to flag over-provisioned workloads and surfacing an estimated 18% in cost savings.',
+      'Automated pipeline querying container metrics from Prometheus, mapping them against pricing models to flag over-provisioned workloads and surfacing an estimated 20% in cost savings.',
     bullets: [
       'Developed an automated pipeline that queries container resource metrics from Prometheus and maps them against pricing models to flag over-provisioned Kubernetes workloads',
-      'Designed an interactive interface translating cluster resource deltas into efficiency reports, surfacing an estimated 18% in potential cost savings',
+      'Designed an interactive interface translating cluster resource deltas into efficiency reports, surfacing an estimated 20% in potential cost savings',
       'Integrated Prometheus metric collection with custom cost estimation formulas based on cloud instance pricing models',
     ],
     tech: ['Python', 'Kubernetes', 'Prometheus', 'OpenCost', 'Docker'],
@@ -143,6 +143,7 @@ export const skillCategories = [
       'Git',
       'Splunk',
       'New Relic',
+      'Github Actions',
     ],
   },
 ];
