@@ -87,7 +87,7 @@ export const projects = [
       'Built on OpenCV, PyTorch, and YOLOv8 keypoint detection, performing multi-object tracking and court line detection to translate pixel coordinates into real-world court distance',
     ],
     tech: ['Python', 'PyTorch', 'YOLOv8', 'Pandas'],
-    // TODO: add `github:` once the repo is public.
+    github: 'https://github.com/hoganngu756/tennis_analysis',
   },
   {
     id: 'pdf-security-scanner',
@@ -99,6 +99,7 @@ export const projects = [
       'Architected a dual-layer security engine using regex heuristics and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images',
       'Developed a full-stack application for uploading documents, triggering scans, and surfacing flagged results in real time',
       'Hardened the architecture against denial-of-service (DoS) attacks by implementing strict file-type validation and upload payload limits',
+      'Combined deterministic heuristic filtering with async Gemini prompt auditing to flag malicious injection vectors in user-uploaded files',
     ],
     tech: ['Java', 'React', 'Spring Boot', 'Gemini API', 'SQLite'],
     github: 'https://github.com/hoganngu756/pdf-prompt-scanner',
@@ -116,7 +117,7 @@ export const projects = [
       'Integrated Prometheus metric collection with custom cost estimation formulas based on cloud instance pricing models',
     ],
     tech: ['Python', 'Kubernetes', 'Prometheus', 'OpenCost', 'Docker'],
-    // TODO: add `github:` once the repo is public.
+    github: 'https://github.com/hoganngu756/kubernetes-cost',
   },
 ];
 
