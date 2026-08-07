@@ -3,6 +3,15 @@ import { render, screen, fireEvent, within } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import Projects from './Projects';
 
+// Every real project has a public repo now, so drop `github` from the first one
+// to keep the private-repo branch covered.
+vi.mock('../data/content', async (importOriginal) => {
+  const actual = await importOriginal();
+  const stripped = { ...actual.projects[0] };
+  delete stripped.github;
+  return { ...actual, projects: [stripped, ...actual.projects.slice(1)] };
+});
+
 // Wrapper that owns selectedSkill the way App does.
 const Harness = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);

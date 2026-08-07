@@ -26,12 +26,12 @@ export const experiences = [
     title: 'AI Consultant Intern',
     company: 'IBM',
     location: 'Austin, TX',
-    period: 'May 2026 – Present',
+    period: 'May 2026 – Aug 2026',
     bullets: [
-      'Creating an AI agent using LangGraph and Python to unify ticket data across SAP and ServiceNow, leveraging historical context to deliver automated resolution suggestions and priority flags',
-      'Building a reporting dashboard using React, Next.js, and PostgreSQL to automate weekly client deliverables, eliminating manual PowerPoint workflows and cutting overhead by 40%',
-      'Coordinating client discovery sessions to translate business requirements into technical specifications that shape engineering work each sprint',
-      'Tracking cross-functional deliverables and milestones in monday.com, giving senior consultants real-time visibility into engagement progress',
+      "Built the document-analysis module for a due diligence agent using Python and LangChain's deepagents framework, extracting financials, contract terms, and comparables against a structured checklist to auto-generate diligence reports and replace a multi-hour manual review per deal",
+      'Created a reporting dashboard using React, Next.js, TypeScript, and PostgreSQL to automate weekly client deliverables, eliminating manual PowerPoint workflows and reducing prep time by 40%',
+      "Deployed the team's first production AI agent to IBM Cloud using Terraform, authoring IaC modules for provisioning and environment configuration",
+      'Translated client business requirements into technical specs during sprint planning and stand-ups, tracking deliverables in monday.com for real-time engagement visibility',
     ],
   },
   {
@@ -41,7 +41,7 @@ export const experiences = [
     period: 'Jan 2026 – Present',
     bullets: [
       'Authoring edge-case test suites and complex coding problems in Python and Java to benchmark LLM code-generation accuracy and identify subtle logic vulnerabilities',
-      'Reviewing code across OOP and scripting stacks to maintain quality standards and test coverage prior to benchmark deployment',
+      'Reviewed 50+ code submissions across OOP and scripting stacks to maintain quality standards and test coverage prior to benchmark deployment',
     ],
   },
   {
@@ -80,13 +80,13 @@ export const projects = [
     title: 'Tennis Analysis System',
     category: 'AI & ML',
     description:
-      'Engineered a computer vision pipeline to track tennis players and ball movement with 95% accuracy across 10,000+ video frames. Optimized dataset preprocessing and keypoint extraction for real-time movement analysis.',
+      'Engineered a computer vision pipeline to track tennis players and ball movement with a 95% detection rate across 10,000+ video frames. Optimized dataset preprocessing and keypoint extraction for real-time movement analysis.',
     bullets: [
-      'Engineered a computer vision pipeline to track tennis players and ball movement with 95% accuracy across 10,000+ video frames',
+      'Engineered a computer vision pipeline to track tennis players and ball movement with a 95% detection rate across 10,000+ video frames',
       'Optimized dataset preprocessing and keypoint extraction to enable real-time movement analysis, including player and ball speed calculations',
       'Built on OpenCV, PyTorch, and YOLOv8 keypoint detection, performing multi-object tracking and court line detection to translate pixel coordinates into real-world court distance',
     ],
-    tech: ['Python', 'PyTorch', 'YOLOv8', 'Pandas'],
+    tech: ['Python', 'PyTorch', 'YOLOv8', 'Pandas', 'OpenCV'],
     github: 'https://github.com/hoganngu756/tennis_analysis',
   },
   {
@@ -110,10 +110,10 @@ export const projects = [
     title: 'Kubernetes Resource and Cost Monitor',
     category: 'Cloud & DevOps',
     description:
-      'Automated pipeline querying container metrics from Prometheus, mapping them against pricing models to flag over-provisioned workloads and surfacing an estimated 20% in cost savings.',
+      'Automated pipeline querying container metrics from Prometheus and cross-referencing them against pricing models to flag over-provisioned Kubernetes workloads, with a dashboard turning raw metrics into actionable efficiency reports.',
     bullets: [
-      'Developed an automated pipeline that queries container resource metrics from Prometheus and maps them against pricing models to flag over-provisioned Kubernetes workloads',
-      'Designed an interactive interface translating cluster resource deltas into efficiency reports, surfacing an estimated 20% in potential cost savings',
+      'Developed an automated pipeline that queries container resource metrics from Prometheus and cross-references them against pricing models to flag over-provisioned Kubernetes workloads',
+      'Built an interactive dashboard visualizing cluster resource deltas over time, turning raw metrics into actionable efficiency reports for engineering review',
       'Integrated Prometheus metric collection with custom cost estimation formulas based on cloud instance pricing models',
     ],
     tech: ['Python', 'Kubernetes', 'Prometheus', 'OpenCost', 'Docker'],
@@ -126,11 +126,21 @@ export const projectCategories = ['All', 'AI & ML', 'Full-Stack', 'Cloud & DevOp
 export const skillCategories = [
   {
     label: 'Languages',
-    items: ['Java', 'Python', 'C#', 'C/C++', 'SQL', 'JavaScript', 'HTML/CSS'],
+    items: ['Java', 'Python', 'C#', 'C/C++', 'SQL', 'JavaScript', 'TypeScript', 'HTML/CSS'],
   },
   {
     label: 'Frameworks & Libraries',
-    items: ['React', 'Next.js', 'Node.js', 'Spring Boot', '.NET', 'REST APIs', 'LangGraph', 'PyTorch'],
+    items: [
+      'React',
+      'Next.js',
+      'Node.js',
+      'Spring Boot',
+      '.NET',
+      'REST APIs',
+      'LangGraph',
+      'LangChain',
+      'PyTorch',
+    ],
   },
   {
     label: 'Developer Tools & Infra',
@@ -139,12 +149,14 @@ export const skillCategories = [
       'SQLite',
       'Docker',
       'Kubernetes',
+      'Terraform',
       'Prometheus',
       'AWS (EC2, Lambda)',
+      'IBM Cloud',
       'Git',
       'Splunk',
       'New Relic',
-      'Github Actions',
+      'GitHub Actions',
     ],
   },
 ];
