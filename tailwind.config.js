@@ -10,6 +10,8 @@ export default {
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
+        // Display serif for headings only — body copy stays on Inter.
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       colors: {
         darkBg: '#0f1117',

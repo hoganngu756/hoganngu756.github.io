@@ -24,7 +24,7 @@ const Skills = ({ selectedSkill, setSelectedSkill }) => {
       </Reveal>
 
       <Reveal delay={60}>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mb-8 italic">
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 italic">
           Tip: Click any skill tag to view related projects using that technology.
         </p>
       </Reveal>

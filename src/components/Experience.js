@@ -16,7 +16,7 @@ const Experience = () => (
         <Reveal key={`${exp.company}-${exp.title}`} delay={idx * 120}>
           <div className="group p-6 rounded-xl bg-lightCard dark:bg-darkCard border border-lightBorder dark:border-darkBorder border-l-4 border-l-blue-500 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-lg dark:hover:shadow-blue-900/10">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-              <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              <h3 className="font-display text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {exp.title}
               </h3>
               <span className="font-mono text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-2.5 py-1 rounded-md self-start sm:self-auto">
@@ -24,7 +24,7 @@ const Experience = () => (
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4">
+            <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4">
               {exp.company}{' '}
               <span className="font-normal text-slate-500 dark:text-slate-400">· {exp.location}</span>
             </p>
@@ -33,10 +33,10 @@ const Experience = () => (
               {exp.bullets.map((bullet, i) => (
                 <li
                   key={i}
-                  className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex items-start gap-2.5"
+                  className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed flex items-start gap-2.5"
                 >
                   <span
-                    className="text-blue-500 dark:text-blue-400 mt-1 flex-shrink-0 text-xs"
+                    className="text-blue-500 dark:text-blue-400 mt-1 flex-shrink-0 text-sm"
                     aria-hidden="true"
                   >
                     ▹
@@ -64,12 +64,14 @@ const Experience = () => (
           <Reveal key={edu.degree} delay={idx * 100}>
             <div className="h-full p-5 rounded-xl bg-lightCard dark:bg-darkCard border border-lightBorder dark:border-darkBorder hover:border-blue-500/50 transition-colors">
               <div className="flex justify-between items-start mb-1 gap-2">
-                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{edu.degree}</p>
+                <p className="font-display text-base font-bold text-slate-900 dark:text-slate-100">
+                  {edu.degree}
+                </p>
                 <span className="font-mono text-xs text-slate-500 dark:text-slate-400 flex-shrink-0">
                   {edu.period}
                 </span>
               </div>
-              <p className="text-xs text-slate-600 dark:text-slate-400">
+              <p className="text-sm text-slate-600 dark:text-slate-400">
                 {edu.school} · {edu.location}
               </p>
             </div>

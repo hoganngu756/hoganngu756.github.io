@@ -77,7 +77,7 @@ function MainContent() {
           </Reveal>
 
           <Reveal delay={60}>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 italic">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 italic">
               Prefer a shell? Click in and run <code className="font-mono not-italic">help</code>.
             </p>
           </Reveal>

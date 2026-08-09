@@ -29,7 +29,7 @@ const Hero = ({ onCopyEmail }) => {
           </p>
 
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-none mb-4 animate-fade-in"
+            className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight mb-4 animate-fade-in"
             style={{ animationDelay: '100ms', animationFillMode: 'backwards' }}
           >
             {profile.name}
