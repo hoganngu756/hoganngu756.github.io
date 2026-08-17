@@ -1,6 +1,11 @@
 import React from 'react';
 import Reveal from './Reveal';
-import { skillCategories } from '../data/content';
+import { skillCategories, projects } from '../data/content';
+
+// Only skills that appear in some project's `tech` can be filtered on — the rest
+// would scroll the visitor up to an empty "No projects found". Those render as
+// plain text instead of buttons.
+const linkableSkills = new Set(projects.flatMap((p) => p.tech.map((t) => t.toLowerCase())));
 
 const Skills = ({ selectedSkill, setSelectedSkill }) => {
   const handleSkillClick = (skill) => {
@@ -25,7 +30,7 @@ const Skills = ({ selectedSkill, setSelectedSkill }) => {
 
       <Reveal delay={60}>
         <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 italic">
-          Tip: Click any skill tag to view related projects using that technology.
+          Tip: Skills used in the projects below are clickable — select one to filter.
         </p>
       </Reveal>
 
@@ -37,16 +42,29 @@ const Skills = ({ selectedSkill, setSelectedSkill }) => {
             </h3>
             <div className="flex flex-wrap gap-2">
               {cat.items.map((item) => {
+                const base =
+                  'font-mono text-xs px-3 py-1.5 rounded-lg border transition-all duration-200';
+                const resting =
+                  'bg-lightCard dark:bg-darkCard text-slate-700 dark:text-slate-300 border-lightBorder dark:border-darkBorder';
+
+                if (!linkableSkills.has(item.toLowerCase())) {
+                  return (
+                    <span key={item} className={`${base} ${resting}`}>
+                      {item}
+                    </span>
+                  );
+                }
+
                 const isSelected = selectedSkill === item;
                 return (
                   <button
                     key={item}
                     onClick={() => handleSkillClick(item)}
                     aria-pressed={isSelected}
-                    className={`font-mono text-xs px-3 py-1.5 rounded-lg border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                    className={`${base} focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                       isSelected
                         ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/20 scale-105'
-                        : 'bg-lightCard dark:bg-darkCard text-slate-700 dark:text-slate-300 border-lightBorder dark:border-darkBorder hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400'
+                        : `${resting} hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400`
                     }`}
                   >
                     {item}

@@ -3,8 +3,8 @@
 
 export const profile = {
   name: 'Hogan Nguyen',
-  role: 'AI Consultant Intern',
-  company: 'IBM',
+  role: 'Incoming Infrastructure Engineer Intern',
+  company: 'American Heart Association',
   email: 'hoganngu756@gmail.com',
   github: 'https://github.com/hoganngu756',
   linkedin: 'https://www.linkedin.com/in/hogan-nguyen/',
@@ -12,25 +12,35 @@ export const profile = {
   location: 'Dallas, TX',
   // Rotated through by the typing effect in the hero.
   taglines: [
-    'building AI agents with LangGraph',
+    'building AI agents with LangChain & LangGraph',
     'shipping full-stack apps in React & Next.js',
+    'provisioning cloud infra with Terraform',
     'wrangling Kubernetes cost telemetry',
     'MS CS @ UT Dallas',
   ],
   bio:
-    'Building AI agents using LangGraph & Python, full-stack applications with React & Next.js, and cloud-native monitoring tooling. Pursuing my MS in Computer Science at UT Dallas.',
+    'Building AI agents using LangChain & Python, full-stack applications with React & Next.js, and cloud-native infrastructure with Terraform and Kubernetes. Pursuing my MS in Computer Science at UT Dallas.',
 };
 
 export const experiences = [
+  {
+    title: 'Infrastructure Engineer Intern',
+    company: 'American Heart Association',
+    location: 'Dallas, TX',
+    period: 'Incoming September 2026',
+    bullets: [
+      'Joining the infrastructure engineering team to support cloud and platform infrastructure',
+    ],
+  },
   {
     title: 'AI Consultant Intern',
     company: 'IBM',
     location: 'Austin, TX',
     period: 'May 2026 – Aug 2026',
     bullets: [
-      "Built the document-analysis module for a due diligence agent using Python and LangChain's deepagents framework, extracting financials, contract terms, and comparables against a structured checklist to auto-generate diligence reports and replace a multi-hour manual review per deal",
+      'Built the document-analysis module for a due diligence agent in Python, pairing LangChain deepagents with Azure OpenAI and Foundry vector search to extract deal terms, replacing a multi-hour manual review per deal',
       'Created a reporting dashboard using React, Next.js, TypeScript, and PostgreSQL to automate weekly client deliverables, eliminating manual PowerPoint workflows and reducing prep time by 40%',
-      "Deployed the team's first production AI agent to IBM Cloud using Terraform, authoring IaC modules for provisioning and environment configuration",
+      "Deployed the team's first internal AI agent to IBM Cloud using Terraform, authoring IaC modules for provisioning and environment configuration",
       'Translated client business requirements into technical specs during sprint planning and stand-ups, tracking deliverables in monday.com for real-time engagement visibility',
     ],
   },
@@ -51,8 +61,8 @@ export const experiences = [
     period: 'Jun 2024 – Aug 2024',
     bullets: [
       'Automated incident ticket escalation workflows in Python on ServiceNow, reducing manual intervention and cutting average response time by 20%',
-      'Built custom Splunk and New Relic dashboards to track real-time system health and identify infrastructure bottlenecks',
-      'Documented 100+ incident tickets and resolution procedures in ServiceNow, establishing standardized troubleshooting logs for team audit readiness',
+      'Constructed custom Splunk and New Relic dashboards correlating application logs with system metrics into a single view of service health, surfacing infrastructure bottlenecks previously caught only after tickets were filed',
+      'Authored runbooks and standardized resolution procedures across 100+ incident tickets in ServiceNow, giving the on-call rotation consistent first-response triage steps',
     ],
   },
 ];
@@ -94,12 +104,11 @@ export const projects = [
     title: 'Document Security and Prompt Scanner',
     category: 'Full-Stack',
     description:
-      'Architected a dual-layer security engine using regex heuristics and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images.',
+      'Architected a four-layer security engine using regex heuristics, PDF structure analysis, visual-obfuscation auditing, and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images.',
     bullets: [
-      'Architected a dual-layer security engine using regex heuristics and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images',
-      'Developed a full-stack application for uploading documents, triggering scans, and surfacing flagged results in real time',
+      'Architected a four-layer security engine using regex heuristics, PDF structure analysis, visual-obfuscation auditing, and the Gemini LLM API to detect hidden prompt injections and jailbreaks across PDF text and embedded images, covering 25+ distinct injection patterns',
+      'Achieved a 90% detection rate with under 8% false positives against a 150-document adversarial test corpus, surfacing flagged results through a full-stack upload and scanning interface',
       'Hardened the architecture against denial-of-service (DoS) attacks by implementing strict file-type validation and upload payload limits',
-      'Combined deterministic heuristic filtering with async Gemini prompt auditing to flag malicious injection vectors in user-uploaded files',
     ],
     tech: ['Java', 'React', 'Spring Boot', 'Gemini API', 'SQLite'],
     github: 'https://github.com/hoganngu756/pdf-prompt-scanner',
@@ -110,13 +119,13 @@ export const projects = [
     title: 'Kubernetes Resource and Cost Monitor',
     category: 'Cloud & DevOps',
     description:
-      'Automated pipeline querying container metrics from Prometheus and cross-referencing them against pricing models to flag over-provisioned Kubernetes workloads, with a dashboard turning raw metrics into actionable efficiency reports.',
+      'Pipeline that cross-references Prometheus container metrics against pricing models and visualizes request-versus-usage deltas, exposed as an MCP server so LLM agents can query live cluster utilization and cost data.',
     bullets: [
-      'Developed an automated pipeline that queries container resource metrics from Prometheus and cross-references them against pricing models to flag over-provisioned Kubernetes workloads',
-      'Built an interactive dashboard visualizing cluster resource deltas over time, turning raw metrics into actionable efficiency reports for engineering review',
+      'Developed a pipeline that cross-references Prometheus container metrics against pricing models and visualizes request-versus-usage deltas, flagging 30% of workloads in a 40-pod cluster as over-provisioned',
+      'Exposed the pipeline as an MCP server, letting LLM agents query live cluster utilization and cost data through structured tool calls for rightsizing analysis',
       'Integrated Prometheus metric collection with custom cost estimation formulas based on cloud instance pricing models',
     ],
-    tech: ['Python', 'Kubernetes', 'Prometheus', 'OpenCost', 'Docker'],
+    tech: ['Python', 'Kubernetes', 'Prometheus', 'OpenCost', 'Docker', 'MCP'],
     github: 'https://github.com/hoganngu756/kubernetes-cost',
   },
 ];
@@ -126,37 +135,43 @@ export const projectCategories = ['All', 'AI & ML', 'Full-Stack', 'Cloud & DevOp
 export const skillCategories = [
   {
     label: 'Languages',
-    items: ['Java', 'Python', 'C#', 'C/C++', 'SQL', 'JavaScript', 'TypeScript', 'HTML/CSS'],
+    items: ['Java', 'Python', 'C#', 'SQL', 'JavaScript', 'TypeScript', 'HTML/CSS'],
   },
   {
     label: 'Frameworks & Libraries',
+    items: ['React', 'Next.js', 'Node.js', 'Spring Boot', '.NET', 'REST APIs', 'PyTorch'],
+  },
+  {
+    label: 'AI & Agentic Systems',
     items: [
-      'React',
-      'Next.js',
-      'Node.js',
-      'Spring Boot',
-      '.NET',
-      'REST APIs',
-      'LangGraph',
       'LangChain',
-      'PyTorch',
+      'LangGraph',
+      'MCP',
+      'RAG',
+      'Prompt Engineering',
+      'Context Engineering',
     ],
   },
   {
     label: 'Developer Tools & Infra',
     items: [
-      'PostgreSQL',
-      'SQLite',
       'Docker',
       'Kubernetes',
       'Terraform',
-      'Prometheus',
-      'AWS (EC2, Lambda)',
+      'AWS',
+      'Azure',
       'IBM Cloud',
+      'CI/CD',
+      'GitHub Actions',
       'Git',
+      'Prometheus',
       'Splunk',
       'New Relic',
-      'GitHub Actions',
+      'PostgreSQL',
+      'MongoDB',
+      'SQLite',
+      'Claude Code',
+      'Copilot',
     ],
   },
 ];

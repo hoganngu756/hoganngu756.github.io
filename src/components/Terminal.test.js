@@ -36,7 +36,7 @@ beforeEach(() => {
 describe('Terminal', () => {
   it('shows the banner on mount', () => {
     renderTerminal();
-    expect(screen.getByText(/Hogan Nguyen — AI Consultant Intern @ IBM/)).toBeInTheDocument();
+    expect(screen.getByText(/Hogan Nguyen — Incoming Infrastructure Engineer Intern @ American Heart Association/)).toBeInTheDocument();
   });
 
   it('lists every command under `help`', () => {
@@ -97,9 +97,9 @@ describe('Terminal', () => {
 
   it('clears the scrollback with `clear`', () => {
     renderTerminal();
-    expect(screen.getByText(/Hogan Nguyen — AI Consultant Intern @ IBM/)).toBeInTheDocument();
+    expect(screen.getByText(/Hogan Nguyen — Incoming Infrastructure Engineer Intern @ American Heart Association/)).toBeInTheDocument();
     type('clear');
-    expect(screen.queryByText(/Hogan Nguyen — AI Consultant Intern @ IBM/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Hogan Nguyen — Incoming Infrastructure Engineer Intern @ American Heart Association/)).not.toBeInTheDocument();
   });
 
   it('walks command history with ArrowUp', () => {
