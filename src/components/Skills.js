@@ -29,7 +29,7 @@ const Skills = ({ selectedSkill, setSelectedSkill }) => {
       </Reveal>
 
       <Reveal delay={60}>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-8 italic">
+        <p className="text-sm text-slate-600 dark:text-slate-400 mb-8 italic">
           Tip: Skills used in the projects below are clickable — select one to filter.
         </p>
       </Reveal>
@@ -37,7 +37,7 @@ const Skills = ({ selectedSkill, setSelectedSkill }) => {
       <div className="space-y-8">
         {skillCategories.map((cat, idx) => (
           <Reveal key={cat.label} delay={idx * 100}>
-            <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
+            <h3 className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-3">
               {cat.label}
             </h3>
             <div className="flex flex-wrap gap-2">

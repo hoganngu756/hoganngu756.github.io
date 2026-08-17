@@ -153,7 +153,7 @@ const Projects = ({ selectedSkill, setSelectedSkill }) => {
                     </h3>
 
                     <div
-                      className="flex items-center gap-3 text-slate-400 flex-shrink-0"
+                      className="flex items-center gap-3 text-slate-500 dark:text-slate-400 flex-shrink-0"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {project.github ? (

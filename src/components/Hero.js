@@ -45,10 +45,10 @@ const Hero = ({ onCopyEmail }) => {
 
           {/* Typed rotating tagline — fixed height so nothing jumps as it types */}
           <p
-            className="font-mono text-sm sm:text-base text-slate-500 dark:text-slate-400 mb-5 min-h-[1.75rem] flex items-center justify-center md:justify-start animate-fade-in"
+            className="font-mono text-sm sm:text-base text-slate-600 dark:text-slate-400 mb-5 min-h-[1.75rem] flex items-center justify-center md:justify-start animate-fade-in"
             style={{ animationDelay: '300ms', animationFillMode: 'backwards' }}
           >
-            <span className="text-emerald-600 dark:text-emerald-400 mr-2 select-none">&gt;</span>
+            <span className="text-emerald-700 dark:text-emerald-400 mr-2 select-none">&gt;</span>
             <span aria-live="polite">{text}</span>
             {showCursor && (
               <span
