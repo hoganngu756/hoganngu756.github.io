@@ -237,7 +237,7 @@ const Projects = ({ selectedSkill, setSelectedSkill }) => {
             aria-modal="true"
             aria-labelledby="project-modal-title"
             tabIndex={-1}
-            className="w-full max-w-lg p-6 rounded-2xl bg-lightCard dark:bg-darkCard border border-lightBorder dark:border-darkBorder shadow-2xl relative animate-slide-up focus:outline-none"
+            className="w-full max-w-lg max-h-[85vh] overflow-y-auto p-6 rounded-2xl bg-lightCard dark:bg-darkCard border border-lightBorder dark:border-darkBorder shadow-2xl relative animate-slide-up focus:outline-none"
             onClick={(e) => e.stopPropagation()}
           >
             <button
