@@ -273,7 +273,7 @@ const Terminal = ({ onCopyEmail, setSelectedSkill }) => {
   };
 
   const lineClass = (type) => {
-    if (type === 'input') return 'text-slate-500 dark:text-slate-500';
+    if (type === 'input') return 'text-slate-500 dark:text-slate-400';
     if (type === 'error') return 'text-rose-600 dark:text-rose-400';
     if (type === 'accent') return 'text-blue-600 dark:text-blue-400 font-semibold';
     return 'text-slate-700 dark:text-slate-300';

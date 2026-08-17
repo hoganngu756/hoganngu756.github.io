@@ -153,7 +153,7 @@ const Projects = ({ selectedSkill, setSelectedSkill }) => {
                     </h3>
 
                     <div
-                      className="flex items-center gap-3 text-slate-500 dark:text-slate-400 flex-shrink-0"
+                      className="flex items-center gap-1 text-slate-500 dark:text-slate-400 flex-shrink-0"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {project.github ? (
@@ -162,7 +162,7 @@ const Projects = ({ selectedSkill, setSelectedSkill }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`${project.title} source on GitHub`}
-                          className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1"
+                          className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2.5"
                         >
                           <FaGithub size={16} />
                         </a>
@@ -180,7 +180,7 @@ const Projects = ({ selectedSkill, setSelectedSkill }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`${project.title} live demo`}
-                          className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-1"
+                          className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2.5"
                         >
                           <FaExternalLinkAlt size={14} />
                         </a>
@@ -208,7 +208,7 @@ const Projects = ({ selectedSkill, setSelectedSkill }) => {
                         aria-pressed={!!isActive}
                         aria-label={`Filter projects by ${t}`}
                         onClick={() => setSelectedSkill && setSelectedSkill(isActive ? null : t)}
-                        className={`font-mono text-[11px] px-2 py-0.5 rounded border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                        className={`font-mono text-[11px] px-2 py-1.5 rounded border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                           isActive
                             ? 'bg-blue-600 text-white border-blue-600'
                             : 'bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700/60 hover:border-blue-500/40 hover:text-blue-500'
