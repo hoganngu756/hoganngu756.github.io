@@ -3,6 +3,17 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaCheck, FaFileAlt } from 'react-icon
 import useTypewriter from '../hooks/useTypewriter';
 import { profile } from '../data/content';
 
+// Transparent at rest; the background tint only appears on hover/focus.
+const SOCIAL_BASE =
+  'inline-flex items-center justify-center w-11 h-11 rounded-lg hover:bg-slate-900/5 dark:hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
+
+// Secondary links stay muted until hovered.
+const SOCIAL_LINK = `${SOCIAL_BASE} text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400`;
+
+// The résumé carries the accent at rest so the eye lands there first — the one
+// thing a recruiter should click — without going back to a filled button.
+const RESUME_LINK = `${SOCIAL_BASE} text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300`;
+
 const Hero = ({ onCopyEmail }) => {
   const [copied, setCopied] = React.useState(false);
   const { text, showCursor } = useTypewriter(profile.taglines);
@@ -70,51 +81,51 @@ const Hero = ({ onCopyEmail }) => {
             className="flex flex-wrap items-center justify-center md:justify-start gap-3.5 animate-fade-in"
             style={{ animationDelay: '500ms', animationFillMode: 'backwards' }}
           >
+            {/* Nothing filled here — hierarchy comes from color alone. The 44px
+                box keeps the tap target honest even though the glyph is small. */}
             <a
               href={profile.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold transition-all shadow-md shadow-blue-500/20 hover:scale-105 active:scale-95 motion-reduce:transform-none"
+              aria-label="Résumé (PDF)"
+              title="Résumé (PDF)"
+              className={RESUME_LINK}
             >
-              <FaFileAlt size={15} />
-              <span>Resume PDF</span>
+              <FaFileAlt size={17} />
             </a>
 
             <a
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-200/80 hover:bg-slate-300 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 motion-reduce:transform-none"
+              aria-label="GitHub profile"
+              title="GitHub"
+              className={SOCIAL_LINK}
             >
-              <FaGithub size={16} />
-              <span>GitHub</span>
+              <FaGithub size={18} />
             </a>
 
             <a
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-200/80 hover:bg-slate-300 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 motion-reduce:transform-none"
+              aria-label="LinkedIn profile"
+              title="LinkedIn"
+              className={SOCIAL_LINK}
             >
-              <FaLinkedin size={16} className="text-blue-600 dark:text-blue-400" />
-              <span>LinkedIn</span>
+              <FaLinkedin size={18} />
             </a>
 
             <button
               onClick={handleCopyEmail}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-200/80 hover:bg-slate-300 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium transition-all hover:scale-105 active:scale-95 motion-reduce:transform-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              title="Click to copy email address"
+              aria-label="Copy email address"
+              title={copied ? 'Copied!' : 'Copy email address'}
+              className={SOCIAL_LINK}
             >
               {copied ? (
-                <>
-                  <FaCheck size={14} className="text-emerald-500" />
-                  <span>Copied!</span>
-                </>
+                <FaCheck size={17} className="text-emerald-500" />
               ) : (
-                <>
-                  <FaEnvelope size={14} />
-                  <span>Email</span>
-                </>
+                <FaEnvelope size={17} />
               )}
             </button>
           </div>
